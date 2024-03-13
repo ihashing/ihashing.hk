@@ -463,6 +463,9 @@ body {
 .text-success {
   color: #fd5816 !important;
 }
+.text-success-two{
+  color:#fd5816 !important;
+}
 .text-info {
   color: #721b7b !important;
 }
@@ -551,6 +554,7 @@ a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-cap
 }
 .mbr-section-btn a.btn:not(.btn-form) {
   border-radius: 100px;
+  margin-right: 1.5rem;
 }
 .mbr-gallery-filter li a {
   border-radius: 100px !important;
@@ -6590,7 +6594,7 @@ a {
   border-radius: 2rem;
   transition: all 0.3s;
   padding: 3rem;
-  background: #eaeaf6;
+  background: #721b7b;
 }
 .cid-u5mnNdmS69 .card-wrapper:hover {
   box-shadow: 0 50px 50px -25px rgba(0, 0, 0, 0.3);
@@ -6630,8 +6634,13 @@ a {
 .cid-u5mnNdmS69 .link {
   color: #721b7b;
 }
+
+.cid-u5mnNdmS69 .text-link {
+  color: #e6e6fa !important;;
+}
+
 .cid-u5mnNdmS69 .card-title {
-  color: #721b7b;
+  color: #f8f8f8;
 }
 .cid-u3qNyzhXD9 {
   padding-top: 5rem;
@@ -13046,9 +13055,8 @@ a {
   font-size: 1.4rem !important;
   font-family: 'Moririse2' !important;
   color: #fd5816;
-  margin-left: 1rem;
   border-radius: 3rem;
-  padding: 1.5rem;
+  margin-right: 1rem;
 }
 .cid-u5ms2J1KS6 .panel-group {
   border: none;
@@ -13064,6 +13072,17 @@ a {
   border-radius: 3rem;
   padding: 2rem;
 }
+.cid-u5ms2J1KS6 .NITTP-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00579d;
+  border-radius: 3rem;
+  padding: 2rem;
+}
+.cid-u5ms2J1KS6 .NITTP-panel .mobi-mbri {
+  font-size: 30px!important; 
+}
 .cid-u5ms2J1KS6 .panel-body,
 .cid-u5ms2J1KS6 .card-header {
   padding: 1rem 0;
@@ -13071,6 +13090,11 @@ a {
 .cid-u5ms2J1KS6 .panel-title-edit {
   color: #f8f8f8;
 }
+.cid-u5ms2J1KS6 .NITTP-panel-title-edit {
+
+  color: #f8f8f8;
+}
+
 .cid-u5ms2J1KS6 .card .card-header {
   background-color: transparent;
   margin-bottom: 0;
@@ -13117,7 +13141,7 @@ a {
   justify-content: center;
 }
 .cid-u5myFY4uSg .card-wrapper {
-  background-color: #e6e6fa;
+  background-color: #721b7b;
   padding: 3rem 2rem;
   border-radius: 3rem;
   transition: all 0.3s;
@@ -13138,12 +13162,17 @@ a {
 }
 .cid-u5myFY4uSg .card-title,
 .cid-u5myFY4uSg .iconfont-wrapper {
-  color: #721b7b;
+  color: #f8f8f8;
   text-align: center;
   margin-bottom: 5px;
 }
+
+.cid-u5myFY4uSg .text-white{
+  color:#f8f8f8;
+}
+
 .cid-u5myFY4uSg .card-text {
-  color: #6c758f;
+  color: #f8f8f8;
   text-align: center;
 }
 .cid-u5myFY4uSg .mbr-section-subtitle {
