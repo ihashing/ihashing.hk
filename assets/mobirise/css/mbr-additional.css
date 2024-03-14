@@ -9836,7 +9836,7 @@ a {
 }
 .cid-u3EU9UhDJi {
   padding-top: 3rem;
-  padding-bottom: 8rem;
+  padding-bottom: 9rem;
   background-color: #f8f8f8;
 }
 .cid-u3EU9UhDJi .mbr-fallback-image.disabled {
@@ -9893,7 +9893,7 @@ a {
 }
 .cid-u5jmH7LG3w {
   padding-top: 6rem;
-  padding-bottom: 7rem;
+  padding-bottom: 3rem;
   background-color: #f8f8f8;
 }
 .cid-u5jmH7LG3w .mbr-media {
@@ -9902,6 +9902,11 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s;
+  &:hover {
+    transform: rotate(-2deg) scale(1.03);
+  }
+
 }
 .cid-u5jmH7LG3w .mbr-media img {
   position: center;
@@ -9986,7 +9991,7 @@ a {
 .cid-u3nSbU9arg {
   padding-top: 5rem;
   padding-bottom: 9rem;
-  background-color: #721b7b;
+  background-color: #f8f8f8;
 }
 .cid-u3nSbU9arg .iconfont-wrapper {
   padding-bottom: 1rem;
@@ -10025,16 +10030,16 @@ a {
   overflow: hidden;
   padding: 4rem 3rem;
   border-radius: 6px;
-  background: #f2effc;
+  background: #721b7b;
   transition: all 0.3s;
   border-radius: 2rem;
   margin-bottom: 2rem;
 }
 .cid-u3nSbU9arg .card-wrapper:hover {
-  background: #721b7b;
+  background: #f8f8f8;
 }
 .cid-u3nSbU9arg .card-wrapper:hover .mbr-iconfont-big {
-  color: #ffffff;
+  color: #721b7b;
   transform: rotate(-20deg);
 }
 .cid-u3nSbU9arg .card-wrapper:hover .card-title,
@@ -10067,7 +10072,7 @@ a {
   top: 0;
 }
 .cid-u3nSbU9arg .mbr-section-title {
-  color: #f8f8f8;
+  color: #721b7b;
 }
 .cid-u3nSbU9arg .card-number {
   color: #721b7b;
@@ -11991,9 +11996,9 @@ a {
   height: 70px;
 }
 .cid-u4YYbnPAv5 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background: linear-gradient(#f8f8f8, #721b7b);
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  background-color:#721b7b;
 }
 .cid-u4YYbnPAv5 .main-title {
   position: relative;
@@ -12023,7 +12028,7 @@ a {
 .cid-u4YYbnPAv5 .main-title,
 .cid-u4YYbnPAv5 .title-col {
   text-align: center;
-  color: #721b7b;
+  color: #f8f8f8;
 }
 .cid-u4YYbnPAv5 .card-text {
   color: #bbbbbb;
@@ -12043,7 +12048,7 @@ a {
 .cid-u4I7b8bFNi {
   padding-top: 9rem;
   padding-bottom: 9rem;
-  background-color: #721b7b;
+  background: linear-gradient(#f8f8f8, #721b7b);
 }
 .cid-u4I7b8bFNi .mbr-fallback-image.disabled {
   display: none;
@@ -12092,7 +12097,7 @@ a {
   text-align: center;
 }
 .cid-u4I7b8bFNi .mbr-section-title {
-  color: #f8f8f8;
+  color: #721b7b;
 }
 .cid-u4I7b8bFNi .mbr-section-subtitle {
   color: #721b7b;
