@@ -13190,6 +13190,16 @@ a {
   width: 200px;
   height: 70px;
 }
+.cid-u5mvUVCVjZ .item-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: 2rem;
+  }
+
 .cid-u5ms2J1KS6 {
   padding-top: 6rem;
   padding-bottom: 1rem;
@@ -13207,6 +13217,8 @@ a {
 }
 .cid-u5ms2J1KS6 .panel-collapse {
   padding: 0 2rem;
+  flex-wrap: wrap;
+  align-items:center;
 }
 .cid-u5ms2J1KS6 .panel-title {
   display: flex;
@@ -13227,10 +13239,48 @@ a {
 .cid-u5ms2J1KS6 .NITTP-panel .mobi-mbri {
   font-size: 30px!important; 
 }
+
+.cid-u5ms2J1KS6 .panel-body{
+  flex: 1;
+  display: flex;
+}
+
 .cid-u5ms2J1KS6 .panel-body,
 .cid-u5ms2J1KS6 .card-header {
   padding: 1rem 0;
 }
+
+.cid-u5ms2J1KS6 .image-wrapper {
+    /* margin-left: 5rem; */
+    width: 40%;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    
+}
+
+@media (max-width: 767px) {
+  .fund-wrapper {
+    margin-left: 0rem;
+    margin-top: 1rem;
+    margin-bottom:1rem;
+    width: 100%;
+    flex-direction:column;
+    align-items: flex-start;
+    gap:0;
+  
+  }
+  .image-wrapper{
+    align-items: flex-start;
+  }
+  .fund{
+  width:150%;
+  }
+  }
+
+
+
+
 .cid-u5ms2J1KS6 .panel-title-edit {
   color: #f8f8f8;
 }

@@ -205,10 +205,17 @@ figure[mbr-media-size] {
   transition: width 0.1s;
 }
 
+.fund-wrapper{
+  display:flex;
+  flex-direction: row;
+  gap: 5rem;
+  }
+
 img,
 iframe {
   display: block;
   width: 100%;
+  border-radius:1rem;
 }
 
 .card {
