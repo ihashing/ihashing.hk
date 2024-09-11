@@ -11232,6 +11232,27 @@ a {
   text-align: center;
 }
 
+.cid-ukETWPyPFD .image-container {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width:100%;
+  margin-top: 25px;
+  height:auto;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.cid-ukETWPyPFD .TQUK-cert {
+  max-width: 40%; 
+  height: auto; 
+  margin: 15px; 
+  z-index: 1;
+}
+
+
+
 
 .cid-uljDyFdfXq {
   padding-top: 1rem;
