@@ -162,9 +162,9 @@
                                 href="About.html">About</a></li>
                     </ul>
 
-                    <div class="navbar-buttons mbr-section-btn"><a class="btn btn-blue-button btn-primary display-4"
+                    <!-- <div class="navbar-buttons mbr-section-btn"><a class="btn btn-blue-button btn-primary display-4"
                             href="Govt-Fund.html"><span class="fa fa-lightbulb-o mbr-iconfont mbr-iconfont-btn"
-                                style="color: rgb(248, 248, 248);"></span>Govt. Fund</a></div>
+                                style="color: rgb(248, 248, 248);"></span>Govt. Fund</a></div> -->
                 </div>
             </div>
         </nav>
@@ -606,7 +606,7 @@
                 </div>
                 <div class="col-12">
                     <p class="mbr-text mbr-fonts-style copyright display-4">
-                        © Copyright 2017-2025 ❤️&nbsp; iHashing Technology Co., Ltd. – All Rights Reserved
+                        © Copyright 2017-<span id="currentYear"></span> ❤️&nbsp; iHashing Technology Co., Ltd. – All Rights Reserved
                     </p>
                 </div>
             </div>
@@ -627,7 +627,18 @@
     <script src="assets/gallery/player.min.js"></script>
     <script src="assets/gallery/script.js"></script>
     <script src="assets/slidervideo/script.js"></script>
+    <script>
+        function updateYear() {
+            // Get the current year
+            const currentYear = new Date().getFullYear();
+            
+            // Update the content of the element with id "currentYear"
+            document.getElementById('currentYear').textContent = currentYear;
+        }
 
+        // Call the function to update the year when the page loads
+        updateYear();
+    </script>
 
     <script>
         window.addEventListener('mouseover', initLandbot, { once: true });

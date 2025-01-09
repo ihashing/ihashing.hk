@@ -498,7 +498,7 @@
             </div>
             <div class="col-12">
                 <p class="mbr-text mbr-fonts-style copyright display-4">
-                    © Copyright 2017-2025 ❤️&nbsp; iHashing Technology Co., Ltd. – All Rights Reserved
+                    © Copyright 2017-<span id="currentYear"></span> ❤️&nbsp; iHashing Technology Co., Ltd. – All Rights Reserved
                 </p>
             </div>
         </div>
@@ -515,7 +515,18 @@
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/theme/js/script.js"></script>
   
-  
+  <script>
+    function updateYear() {
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+        
+        // Update the content of the element with id "currentYear"
+        document.getElementById('currentYear').textContent = currentYear;
+    }
+
+    // Call the function to update the year when the page loads
+    updateYear();
+</script>
   <script>
 window.addEventListener('mouseover', initLandbot, { once: true });
 window.addEventListener('touchstart', initLandbot, { once: true });

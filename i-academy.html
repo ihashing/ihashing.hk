@@ -389,7 +389,7 @@ As endorsed by leading education VTC - HK NITTP & TQUK RQF, we have successfully
             </div>
             <div class="col-12">
                 <p class="mbr-text mbr-fonts-style copyright display-4">
-                    © Copyright 2017-2025 ❤️&nbsp; iHashing Technology Co., Ltd. – All Rights Reserved
+                    © Copyright 2017-<span id="currentYear"></span> ❤️&nbsp; iHashing Technology Co., Ltd. – All Rights Reserved
                 </p>
             </div>
         </div>
@@ -405,7 +405,18 @@ As endorsed by leading education VTC - HK NITTP & TQUK RQF, we have successfully
       <script src="assets/playervimeo/vimeo_player.js"></script>
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
+  <script>
+    function updateYear() {
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+        
+        // Update the content of the element with id "currentYear"
+        document.getElementById('currentYear').textContent = currentYear;
+    }
+
+    // Call the function to update the year when the page loads
+    updateYear();
+</script>
   
   <script>
 var stage = new createjs.Stage("c");
