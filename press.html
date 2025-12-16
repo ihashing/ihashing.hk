@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press - IHASHING TECHNOLOGY GROUP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="stylesheet" href="style/press.css">
+       <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- <style>
+        :root {
+            --primary: #721b7b;
+            --secondary: #00579d;
+            --accent-orange: #fa5716;
+            --accent-red: #DC3545;
+            --white: #FFFFFF;
+            --alabaster: #f8f8f8;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--white);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #f8f8f8 25%, transparent 25%),
+                        linear-gradient(-45deg, #f8f8f8 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, #f8f8f8 75%),
+                        linear-gradient(-45deg, transparent 75%, #f8f8f8 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            animation: bgMove 20s linear infinite;
+            opacity: 0.03;
+        }
+        
+        @keyframes bgMove {
+            0% { background-position: 0 0, 0 10px, 10px -10px, -10px 0px; }
+            100% { background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px; }
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+           .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+            animation: logoGlow 3s infinite;
+        }
+        
+        @keyframes logoGlow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            display: inline-block;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .connect-wallet-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .connect-wallet-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .connect-wallet-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .connect-wallet-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(114, 27, 123, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at top left, rgba(114, 27, 123, 0.12), transparent 55%),
+                        radial-gradient(circle at bottom right, rgba(0, 87, 157, 0.12), transparent 50%),
+                        linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.04) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 220%;
+            height: 220%;
+            background: radial-gradient(circle, rgba(114, 27, 123, 0.08) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 30px);
+            mix-blend-mode: screen;
+            opacity: 0.4;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .hero-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.15;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-light);
+            max-width: 580px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 26px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .hero-btn i {
+            font-size: 15px;
+        }
+
+        .hero-btn-primary {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            box-shadow: 0 12px 30px rgba(0, 87, 157, 0.25);
+        }
+
+        .hero-btn-outline {
+            color: var(--secondary);
+            border: 1px solid rgba(0, 87, 157, 0.4);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(114, 27, 123, 0.25);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            animation: expandWidth 1s ease;
+        }
+        
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 80px; }
+        }
+        
+        /* Press Releases Grid */
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .press-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .press-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .press-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(250, 87, 22, 0.2);
+        }
+        
+        .press-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--alabaster), rgba(250, 87, 22, 0.1));
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 18px;
+        }
+        
+        .press-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .press-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .press-content {
+            padding: 30px;
+        }
+        
+        .press-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        .press-date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .press-author {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .press-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            line-height: 1.4;
+            transition: color 0.3s;
+        }
+        
+        .press-card:hover .press-content h3 {
+            color: var(--accent-orange);
+        }
+        
+        .press-excerpt {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .press-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .press-tag {
+            background: var(--alabaster);
+            color: var(--text-dark);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .press-tag:hover {
+            background: var(--accent-orange);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .press-link {
+            color: var(--secondary);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        .press-link:hover {
+            color: var(--accent-orange);
+            transform: translateX(5px);
+        }
+
+        /* Interview Videos Section */
+        .interview-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .video-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .video-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(114, 27, 123, 0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: var(--alabaster);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 25px;
+        }
+
+        .video-info h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .video-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* Achievements Timeline Section */
+        .timeline-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(250, 87, 22, 0.05) 100%);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto 0;
+            padding: 0 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--accent-orange));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 40px);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 40px);
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(114, 27, 123, 0.2);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid var(--white);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-right: 20px solid var(--white);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(114, 27, 123, 0.3);
+            z-index: 1;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* Media Coverage Section */
+        .media-section {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.05) 100%);
+            padding: 80px 0;
+        }
+        
+        .media-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        .media-logo {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        
+        .media-logo.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .media-logo:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .media-logo i {
+            font-size: 48px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 80px 0;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .contact-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-contact {
+            background: var(--white);
+            color: var(--primary);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-contact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            animation: bgMove 20s linear infinite;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .footer-column.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s;
+        }
+        
+        .footer-column:nth-child(1) { transition-delay: 0.1s; }
+        .footer-column:nth-child(2) { transition-delay: 0.2s; }
+        .footer-column:nth-child(3) { transition-delay: 0.3s; }
+        .footer-column:nth-child(4) { transition-delay: 0.4s; }
+        .footer-column:nth-child(5) { transition-delay: 0.5s; }
+        .footer-column:nth-child(6) { transition-delay: 0.6s; }
+        .footer-column:nth-child(7) { transition-delay: 0.7s; }
+        .footer-column:nth-child(8) { transition-delay: 0.8s; }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-orange);
+            animation: expandWidth 1s ease;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        
+        .footer-column.visible ul li {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.3s;
+        }
+        
+        .footer-column.visible ul li:nth-child(1) { transition-delay: 0.1s; }
+        .footer-column.visible ul li:nth-child(2) { transition-delay: 0.2s; }
+        .footer-column.visible ul li:nth-child(3) { transition-delay: 0.3s; }
+        .footer-column.visible ul li:nth-child(4) { transition-delay: 0.4s; }
+        .footer-column.visible ul li:nth-child(5) { transition-delay: 0.5s; }
+        .footer-column.visible ul li:nth-child(6) { transition-delay: 0.6s; }
+        .footer-column.visible ul li:nth-child(7) { transition-delay: 0.7s; }
+        .footer-column.visible ul li:nth-child(8) { transition-delay: 0.8s; }
+        
+        .footer-column ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-orange);
+            transform: translateX(5px);
+        }
+        
+        .footer-column p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-5px) rotate(360deg);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--white);
+                transition: left 0.3s;
+                z-index: 99;
+                overflow-y: auto;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            
+            nav.active ul li {
+                opacity: 1;
+                transform: translateX(0);
+                transition: all 0.3s;
+            }
+            
+            nav.active ul li:nth-child(1) { transition-delay: 0.1s; }
+            nav.active ul li:nth-child(2) { transition-delay: 0.2s; }
+            nav.active ul li:nth-child(3) { transition-delay: 0.3s; }
+            nav.active ul li:nth-child(4) { transition-delay: 0.4s; }
+            nav.active ul li:nth-child(5) { transition-delay: 0.5s; }
+            nav.active ul li:nth-child(6) { transition-delay: 0.6s; }
+            nav.active ul li:nth-child(7) { transition-delay: 0.7s; }
+            nav.active ul li:nth-child(8) { transition-delay: 0.8s; }
+            nav.active ul li:nth-child(9) { transition-delay: 0.9s; }
+            nav.active ul li:nth-child(10) { transition-delay: 1.0s; }
+
+            .press-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 100px 0 80px;
+            }
+
+            .hero-container {
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .hero-copy {
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 80px;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-icon {
+                left: 30px;
+                transform: translateX(-75%);
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after {
+                left: -20px;
+                right: auto;
+                border-left: none;
+                border-right: 20px solid var(--white);
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-card {
+                padding: 20px;
+            }
+        }
+        
+        /* Achievements Section */
+        .achievements-section {
+            padding: 80px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .achievements-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(114, 27, 123, 0.02) 0%, rgba(0, 87, 157, 0.02) 100%);
+            pointer-events: none;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid transparent;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .achievement-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            transition: height 0.4s;
+        }
+
+        .achievement-card:nth-child(1)::before {
+            background: linear-gradient(180deg, var(--secondary), var(--primary));
+        }
+
+        .achievement-card:nth-child(2)::before {
+            background: linear-gradient(180deg, var(--accent-orange), var(--accent-red));
+        }
+
+        .achievement-card:nth-child(3)::before {
+            background: linear-gradient(180deg, var(--primary), var(--accent-orange));
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(114, 27, 123, 0.15);
+        }
+
+        .achievement-card:hover::before {
+            height: 100%;
+        }
+
+        .achievement-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--white);
+            flex-shrink: 0;
+            transition: all 0.4s;
+        }
+
+        .achievement-card:nth-child(1) .achievement-icon {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            box-shadow: 0 8px 20px rgba(0, 87, 157, 0.3);
+        }
+
+        .achievement-card:nth-child(2) .achievement-icon {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            box-shadow: 0 8px 20px rgba(250, 87, 22, 0.3);
+        }
+
+        .achievement-card:nth-child(3) .achievement-icon {
+            background: linear-gradient(135deg, var(--primary), var(--accent-orange));
+            box-shadow: 0 8px 20px rgba(114, 27, 123, 0.3);
+        }
+
+        .achievement-card:hover .achievement-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .achievement-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .achievement-list {
+            list-style: none;
+        }
+
+        .achievement-item {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .achievement-item:last-child {
+            border-bottom: none;
+        }
+
+        .achievement-item::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            font-size: 10px;
+            color: var(--accent-orange);
+            transition: transform 0.3s;
+        }
+
+        .achievement-item:hover {
+            padding-left: 30px;
+        }
+
+        .achievement-item:hover::before {
+            transform: translateX(3px);
+        }
+
+        .achievement-item strong {
+            color: var(--primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .achievement-item span {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange), var(--secondary));
+            z-index: 10000;
+            transition: width 0.1s;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+             <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="IHASHING Logo" style="height: 30px; width: auto; margin-right: 10px; vertical-align: middle;"> <p>IHASHING</p>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="iacademy.html">iAcademy</a></li>
+                    <!-- <li><a href="isolution.html">iSolution</a></li> -->
+                    <li><a href="productsandsolutions.html">Products &amp; Solutions</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="press.html">Press</a></li>
+                   <li><a href="https://medium.com/ihashing" target="_blank">Blog</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-copy">
+                <h1>Press & Media</h1>
+                <p>Stay updated with the latest news, announcements, and media coverage about IHASHING TECHNOLOGY GROUP and our innovations in the Web3 space.</p>
+            </div>
+          
+        </div>
+    </section>
+
+    <!-- Interview Videos Section -->
+    <section class="interview-section">
+        <div class="container">
+            <h2 class="section-title">Interviews & Talks</h2>
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/j8A-GN1wcU0?si=SM5zNeMrcOfp9Ycc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>【Business Innovator 呈獻《BIZ勝之道》】 #iHashing</h3>
+                        <div class="video-meta">
+                            <span><i class="fas fa-calendar"></i>August 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/AUGNeyG0Rco?si=FXWu2_uMxwiaK3ON" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>HKCT 企業專訪</h3>
+                        <div class="video-meta">
+                            <span><i class="fas fa-calendar"></i>August 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Timeline  Journey Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-digital-tachograph"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Digital Transformation Support Pilot Programme (DTSPP)</h3>
+                        <h4>Registered solution provider</h4>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>HKCT Business Awards 2023</h3>
+                        <h4>Most Outstanding Blockchain & Web3 Solutions</h4>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>BusinessFocus Excellence Award 2023</h3>
+                        <h4>Green Blockchain Solutions & Web3 Education</h4>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>TQUK Excellence Award 2022</h3>
+                        <h4>Innovation Award</h4>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>VTC NITTP registered & TQUK endorsed futureSkills courses provider & Instructor</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Developers & Publisher of BURST & SIGNUM Blockchain HK Team, BURSTPAY & Phoenix wallet, SIGDAO & series Web3/NFT Projects</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>OpenSource Developers & Arctic Code Vault Contributors</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>INTEGROMAT, ODOO ERP, ECWID, Eats365POS, Landbot, Memberstack, LearnWorlds Partners</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Projects Showcase at CVCF 2019 Innovator</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Macau MIS Week 2019</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Projects listed on Fintech Association of Hong Kong Blockchain Ecosystem and Blockchain.News Ecosystem</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section" id="achievements">
+        <div class="container">
+            <h2 class="section-title">Our Achievements</h2>
+            
+            <div class="achievements-grid">
+                <!-- Education & Expertise -->
+                <div class="achievement-card">
+                    <div class="achievement-header">
+                        <div class="achievement-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="achievement-title">Education & Expertise</h3>
+                    </div>
+                    <ul class="achievement-list">
+                        <li class="achievement-item">
+                            <strong>Cyberport Academy Trainer</strong>
+                            <span>Web3, AI, Blockchain</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>HKU, Centre for IT in Education Guest Speaker</strong>
+                            <span>The Green web3 revolution</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>TQUK Excellence Awards 2022</strong>
+                            <span>Innovation Award</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>VTC NITTP Registered & Endorsed Provider</strong>
+                            <span>futureskills courses provider & Instructor</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>TQUK Internal Quality Assurance</strong>
+                            <span>Course Assessor, TQUK RQF endorsed courses provider</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>Verified Teacher & Certified Educator</strong>
+                            <span>Code.org, Github Education & Quizizz AI Certified Educator</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solutions Awards & Recognition -->
+                <div class="achievement-card">
+                    <div class="achievement-header">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="achievement-title">Awards & Recognition</h3>
+                    </div>
+                    <ul class="achievement-list">
+                        <li class="achievement-item">
+                            <strong>Hong Kong Representative</strong>
+                            <span>2024 World Artificial Intelligence Conference (WAIC)</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>WIKIEXPO HK</strong>
+                            <span>Supporting Partners 2024</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>DES2024</strong>
+                            <span>Nominated Exhibitor</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>HKCT BUSINESS AWARDS 2023</strong>
+                            <span>Most Outstanding Blockchain & Web3 Solutions</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>BUSINESS INNOVATOR 2023</strong>
+                            <span>Most Innovative Enterprise Award - Best Blockchain Education, Application & Solution of the Year 2023</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>BusinessFocus Excellence Awards 2023</strong>
+                            <span>Blockchain Solutions & Web3 Education</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Web3 Development -->
+                <div class="achievement-card">
+                    <div class="achievement-header">
+                        <div class="achievement-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="achievement-title">Web3 Development</h3>
+                    </div>
+                    <ul class="achievement-list">
+                        <li class="achievement-item">
+                            <strong>SIGNUM Blockchain Network Developers</strong>
+                            <span>TOP 400 blockchain project worldwide (formerly Burst)</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>Publisher of Web3 Projects</strong>
+                            <span>BURSTPAY, Phoenix wallet, SIGDAO.IO on CEX, DEX, Google Play, App Store, Product Hunt (200,000+ users)</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>OpenSource Developers</strong>
+                            <span>Arctic Code Vault Contributors</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>DTSPP Registered Solutions Provider</strong>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>Cyberport CIP, CCMF & Startup Alumni</strong>
+                            <span>Founders of series fintech & blockchain companies</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>Lecturer & Speaker</strong>
+                            <span>HKFTU, SFC-CPT, OUHK LiPACE Blockchain Foundation Courses</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>Fintech Week 2022 Exhibitor</strong>
+                            <span>Listed on Fintech Association HK & Blockchain.News Ecosystem</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>Top 30 Projects</strong>
+                            <span>CVCF 2019 Innovator, Macau MIS Week 2019</span>
+                        </li>
+                        <li class="achievement-item">
+                            <strong>Strategic Partners</strong>
+                            <span>MAKE.com, ODOO ERP, ECWID, Eats365POS, Landbot, Memberstack, AWS, OVHCloud, LearnWorlds</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press Releases Section -->
+    <section class="section" id="press-releases">
+        <div class="container">
+            <h2 class="section-title">Press Releases</h2>
+            <div class="press-grid">
+                <div class="press-card">
+                    <div class="press-content">
+                        <h3>Cyberport eNewsletter</h3>
+                        <p class="press-excerpt">
+                            Cyberport Hong Kong highlights iHashing as an innovative startup leveraging blockchain technology to advance mobile commerce (mCommerce), positioning it as a rising player in the FinTech landscape during 2019 events such as the Cyberport University Partnership Programme Demo Day.
+                        </p>
+                        <div class="press-tags">
+                            <span class="press-tag">Blockchain</span>
+                            <span class="press-tag">FinTech</span>
+                            <span class="press-tag">Cyberport</span>
+                            <span class="press-tag">Startup</span>
+                        </div>
+                        <a href="https://www.cyberport.hk/enewsletter/v133/1330006.html" class="press-link" target="_blank">
+                            Read Full Release <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="press-card">
+                    <div class="press-content">
+                        <h3>Listed on Blockchain News</h3>
+                        <p class="press-excerpt">
+                            The analysis from Blockchain News on Hong Kong's blockchain ecosystem, dated July 2020, features iHashing Technology Co. Ltd. as a prominent startup established in 2017 and backed by Cyberport Hong Kong.
+                        </p>
+                        <div class="press-tags">
+                            <span class="press-tag">Blockchain Startups</span>
+                            <span class="press-tag">Smart Contracts</span>
+                            <span class="press-tag">Cyberport Support</span>
+                        </div>
+                        <a href="https://blockchain.news/analysis/hong-kong-blockchain-ecosystem" class="press-link" target="_blank">
+                            Read Full Release <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="press-card">
+                    <div class="press-content">
+                        <h3>Macau International Startup Week 2019</h3>
+                        <p class="press-excerpt">
+                            The social media post from 2019 expresses gratitude to Cyberport for its support of BURSTPAY, an innovative blockchain payment platform developed by iHashing Technology Co. Ltd., during the Macau International Startup Week.
+                        </p>
+                        <div class="press-tags">
+                            <span class="press-tag">Blockchain Payments</span>
+                            <span class="press-tag">Eco-Friendly Crypto</span>
+                            <span class="press-tag">Cyberport Support</span>
+                            <span class="press-tag">Startup Innovation</span>
+                        </div>
+                        <a href="https://www.linkedin.com/posts/sigdao_home-activity-6577539025081634816-gojE?utm_source=share&utm_medium=member_desktop&rcm=ACoAACbTDkUBrom31SH50fwE4GOUYAFcg0WwM5g" class="press-link" target="_blank">
+                            Read Full Release <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Coverage Section -->
+    <!-- <section class="media-section">
+        <div class="container">
+            <h2 class="section-title">As Featured In</h2>
+            <div class="media-logos">
+                <div class="media-logo">
+                    <i class="fas fa-newspaper"></i>
+                    <h4>Forbes</h4>
+                </div>
+                <div class="media-logo">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <h4>Bloomberg</h4>
+                </div>
+                <div class="media-logo">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Coindesk</h4>
+                </div>
+                <div class="media-logo">
+                    <i class="fas fa-microphone"></i>
+                    <h4>CNBC</h4>
+                </div>
+                <div class="media-logo">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>TechCrunch</h4>
+                </div>
+                <div class="media-logo">
+                    <i class="fas fa-link"></i>
+                    <h4>LinkedIn</h4>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <!-- <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Media Inquiries</h2>
+                <p>For press inquiries, interview requests, or additional information, please contact our media relations team.</p>
+                <div class="contact-buttons">
+                    <a href="mailto:press@ihashing.hk" class="btn-contact">
+                        <i class="fas fa-envelope"></i> Email Press Team
+                    </a>
+                    <a href="#" class="btn-contact btn-outline">
+                        <i class="fas fa-download"></i> Download Media Kit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+        <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>IHASHING</h3>
+                    <p>Empower SME with Blockchain Academy,
+                        Green Web3 Solutions & dAPP Development</p>
+                    <div class="social-links">
+                     
+                        <a href="https://www.linkedin.com/company/ihashing/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/ihashing.hk"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ihashing.hk/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCgOn8PuxHSinqjXF8JsARLA"><i class="fab fa-youtube"></i></a>
+                        <a href="https://github.com/ihashing"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                              <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="iacademy.html">iAcademy</a></li>
+                        <li><a href="products-and-solutions.html">Products & Solutions</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="press.html">Press</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                           <li><a href="about.html">About</a></li>
+                                <li><a href="termsofservice.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Office 1301, 13/F, One Portside, 29 Tai Yau Street, San Po Kong, Hong Kong</p>
+            
+                    <p><i class="fas fa-envelope"></i> info@ihashing.hk</p>
+                 
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2017-2025 ❤️  iHashing Technology Co., Ltd. – All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.press-card, .media-logo, .video-card, .timeline-item, .footer-column, .achievement-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Connect wallet button
+        document.querySelectorAll('.connect-wallet-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
+                // setTimeout(() => {
+                //     this.innerHTML = '<i class="fas fa-check"></i> Connected';
+                //     setTimeout(() => {
+                //         this.innerHTML = 'Connect Wallet';
+                //     }, 2000);
+                // }, 2000);
+                  window.open('https://signum.network/wallet', '_blank');
+            });
+        });
+
+        // Scroll Progress Bar & Header scroll effect
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+            
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - IHASHING TECHNOLOGY GROUP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="style/projects.css">
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- <style>
+
+    </style> -->
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+             <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="IHASHING Logo" style="height: 30px; width: auto; margin-right: 10px; vertical-align: middle;"> <p>IHASHING</p>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="iacademy.html">iAcademy</a></li>
+                    <!-- <li><a href="isolution.html">iSolution</a></li> -->
+                    <li><a href="productsandsolutions.html">Products &amp; Solutions</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="press.html">Press</a></li>
+                   <li><a href="https://medium.com/ihashing" target="_blank">Blog</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-copy">
+                <h1>Our Projects</h1>
+                <p>Explore our portfolio of innovative blockchain and Web3 solutions driving new digital economies with secure, scalable, and human-centric experiences.</p>
+             
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section">
+        <div class="container">
+            <!-- <h2 class="section-title">Featured Projects</h2>
+             -->
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <div class="filter-tab active" data-filter="all">All Projects</div>
+                <div class="filter-tab" data-filter="blockchain">Blockchain Use Cases</div>
+                <div class="filter-tab" data-filter="web3DApp">Web3 DApp</div>
+                <div class="filter-tab" data-filter="ecom_crm">E-commerce & CRM</div>
+                <div class="filter-tab" data-filter="smartPage">Smart Page</div>
+                
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be dynamically generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <!-- <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="8">0</div>
+                    <div class="stat-label">Awards Won</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <!-- <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Have a Project ideea in Mind?</h2>
+                <p>Let's collaborate to bring your blockchain vision to life</p>
+                <a href="#" class="btn-cta">Start Your Project</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+        <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>IHASHING</h3>
+                    <p>Empower SME with FutureSkills Academy, 
+                        Green Web3 Solutions & dAPP Development.</p>
+                    <div class="social-links">
+                     
+                        <a href="https://www.linkedin.com/company/ihashing/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/ihashing.hk"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ihashing.hk/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCgOn8PuxHSinqjXF8JsARLA"><i class="fab fa-youtube"></i></a>
+                        <a href="https://github.com/ihashing"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="iacademy.html">iAcademy</a></li>
+                        <li><a href="products-and-solutions.html">Products & Solutions</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="press.html">Press</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                           <li><a href="about.html">About</a></li>
+                        <li><a href="termsofservice.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Office 1301, 13/F, One Portside, 29 Tai Yau Street, San Po Kong, Hong Kong</p>
+                      
+                    <p><i class="fas fa-envelope"></i> info@ihashing.hk</p>
+                 
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2017-2025 ❤️  iHashing Technology Co., Ltd. – All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const CATEGORY_LABELS = {
+            blockchain: 'Blockchain Use Cases',
+            web3DApp: 'Web3 DApp',
+            ecom_crm: 'E-commerce & CRM',
+            smartPage: 'Smart Page'
+        };
+
+        const fallbackCategoryLabel = 'General Innovation';
+
+        function getProjectCategories(project) {
+            if (Array.isArray(project.categories) && project.categories.length > 0) {
+                return project.categories;
+            }
+            if (project.category) {
+                return [project.category];
+            }
+            return [];
+        }
+
+        // Projects Data Array
+        const projectsData = [
+            {
+                id: 1,
+                category: 'blockchain',
+                categories: ['blockchain'],
+                categoryLabel: 'Blockchain Use Cases',
+                title: 'SIGDAO Foundation | Lab',
+                description: 'A pioneering non-profit organization focused on advancing decentralized governance and blockchain research. The foundation provides grants, education, and resources to foster Web3 innovation globally.',
+                overlayTitle: 'Decentralized Governance Platform',
+                image: 'assets/images/projectsLogo/projectLogo1.jpeg',
+                technologies: ['Ethereum', 'DAO', 'Governance', 'Smart Contracts'],
+                liveLink: 'https://sigdao.io',
+                githubLink: '#'
+            },
+            {
+                id: 2,
+                category: 'blockchain',
+                categories: ['blockchain'],
+                categoryLabel: 'Blockchain Use Cases',
+                title: 'SIGNUM Contributions',
+                description: 'Australian-based research and development lab specializing in cutting-edge blockchain technologies. Focuses on developing scalable solutions for enterprise adoption and next-generation decentralized applications.',
+                overlayTitle: 'Research & Development Hub',
+                image: 'assets/images/projectsLogo/projectLogo2.jpeg',
+                technologies: ['Research', 'Innovation', 'Enterprise', 'Australia'],
+                liveLink: 'https://docs.signum.network/ecosystem',
+                githubLink: '#'
+            },
+            {
+                id: 3,
+                category: 'web3DApp',
+                categories: ['web3DApp', 'blockchain'],
+                categoryLabel: 'Web3 DApp',
+                title: 'Bettermi.io',
+                description: 'A comprehensive DeFi platform that optimizes yield farming strategies across multiple protocols. Features automated portfolio management, risk assessment tools, and real-time analytics.',
+                overlayTitle: 'Decentralized Finance Solution',
+                image: 'assets/images/projectsLogo/projectLogo3.jpeg',
+                technologies: ['DeFi', 'Yield Farming', 'Automated', 'Multi-Chain'],
+                liveLink: 'https://www.bettermi.io/',
+                githubLink: '#'
+            },
+            {
+                id: 4,
+                category: 'smartPage',
+                categories: ['smartPage'],
+                categoryLabel: 'Smart Page',
+                title: '檸檬冰室 Lemon cafe',
+                description: 'A curated NFT marketplace for digital artists and collectors. Features low gas fees, artist royalties, and innovative discovery mechanisms for emerging talent in the digital art space.',
+                overlayTitle: 'Digital Art Trading Platform',
+                image: 'assets/images/projectsLogo/projectLogo4.jpeg',
+                technologies: ['NFT', 'Marketplace', 'Art', 'Polygon'],
+                liveLink: 'https://lemoncafe.vercel.app/',
+                githubLink: '#'
+            },
+            {
+                id: 5,
+                category: 'ecom_crm',
+                categories: ['ecom_crm'],
+                categoryLabel: 'E-commerce & CRM',
+                title: '中國香港乒乓球學校',
+                description: 'Enterprise-grade supply chain solution providing end-to-end transparency and traceability. Reduces fraud, improves efficiency, and enables real-time tracking of goods across global networks.',
+                overlayTitle: 'Transparent Supply Chain',
+                image: 'assets/images/projectsLogo/projectLogo5.jpeg',
+                technologies: ['Supply Chain', 'IoT', 'Enterprise', 'Hyperledger'],
+                liveLink: 'https://www.hkctts.com/',
+                githubLink: '#'
+            },
+            {
+                id: 6,
+                category: 'ecom_crm',
+                categories: ['ecom_crm'],
+                categoryLabel: 'E-commerce & CRM',
+                title: 'TAKLAW (CONTRACTING)',
+                description: 'An innovative educational platform leveraging blockchain for credential verification. Offers courses on blockchain development, smart contracts, and decentralized application design with verifiable certificates.',
+                overlayTitle: 'Blockchain Learning Management',
+                image: 'assets/images/projectsLogo/projectLogo6.jpeg',
+                technologies: ['Education', 'Credentials', 'Learning', 'Web3'],
+                liveLink: 'https://www.taklaw.house/',
+                githubLink: '#'
+            },
+            {
+                id: 7,
+                category: 'smartPage',
+                categories: ['smartPage'],
+                categoryLabel: 'Smart Page',
+                title: 'Evo Dè Beauty',
+                description: 'A comprehensive Web3 marketing solution that leverages blockchain technology for transparent and verifiable advertising campaigns. Track engagement, verify impressions, and reward community participation with token incentives.',
+                overlayTitle: 'Blockchain-Powered Marketing',
+                image: 'assets/images/projectsLogo/projectLogo7.jpeg',
+                technologies: ['Marketing', 'Social Media', 'Tokens', 'Analytics'],
+                liveLink: 'https://evodebeauty.hk/',
+                githubLink: '#'
+            },
+            {
+                id: 8,
+                category: 'blockchain',
+                categories: ['blockchain', 'ecom_crm'],
+                categoryLabel: 'Blockchain Use Cases',
+                title: '寶龍木業',
+                description: 'A cutting-edge decentralized identity solution enabling users to control their digital identities. Features self-sovereign identity, verifiable credentials, and privacy-preserving authentication across multiple platforms.',
+                overlayTitle: 'Self-Sovereign Identity Solution',
+                image: 'assets/images/projectsLogo/projectLogo8.jpeg',
+                technologies: ['Identity', 'Privacy', 'Verifiable Credentials', 'DID'],
+                liveLink: 'https://pdleshop.com/',
+                githubLink: '#'
+            },
+            {
+                id: 9,
+                category: 'smartPage',
+                categories: ['smartPage'],
+                categoryLabel: 'Smart Page',
+                title: 'LOCK - 快速換偈油',
+                description: 'Next-generation e-commerce platform integrating blockchain for transparent transactions, smart contract-based escrow, and decentralized customer relationship management. Features crypto payments and loyalty rewards.',
+                overlayTitle: 'Decentralized Shopping Experience',
+                image: 'assets/images/projectsLogo/projectLogo9.jpeg',
+                technologies: ['E-commerce', 'CRM', 'Smart Contracts', 'Crypto Payments'],
+                liveLink: 'https://lockltd.netlify.app/',
+                githubLink: '#'
+            },
+            {
+                id: 10,
+                category: 'blockchain',
+                categories: ['blockchain', 'ecom_crm'],
+                categoryLabel: 'Blockchain Use Cases',
+                title: 'SY Consulting',
+                description: 'Dynamic and interactive landing page builder with Web3 integration. Create engaging pages with wallet connection, token gating, NFT displays, and real-time blockchain data visualization.',
+                overlayTitle: 'Web3-Enabled Landing Pages',
+                image: 'assets/images/projectsLogo/projectLogo10.jpeg',
+                technologies: ['Web3', 'Landing Pages', 'Interactive', 'No-Code'],
+                liveLink: 'https://www.syconsultingltd.com/',
+                githubLink: '#'
+            },
+            {
+                id: 11,
+                category: 'blockchain',
+                categories: ['blockchain', 'ecom_crm'],
+                categoryLabel: 'Blockchain Use Cases',
+                title: 'One Primitive Concept',
+                description: 'Advanced community management and engagement platform for Web3 projects. Features DAO governance, token-gated content, community rewards, and analytics dashboard for measuring engagement metrics.',
+                overlayTitle: 'Web3 Community Management',
+                image: 'assets/images/projectsLogo/projectLogo11.jpeg',
+                technologies: ['Community', 'DAO', 'Engagement', 'Rewards'],
+                liveLink: 'https://opc.house',
+                githubLink: '#'
+            },
+            {
+                id: 12,
+                category: 'ecom_crm',
+                categories: ['ecom_crm'],
+                categoryLabel: 'E-commerce & CRMß', 
+                title: 'Building Blocks Learning Centre',
+                description: 'Secure cross-chain bridge enabling seamless asset transfers between multiple blockchain networks. Features automated liquidity provisioning, low fees, and support for various token standards across major chains.',
+                overlayTitle: 'Cross-Chain Asset Bridge',
+                image: 'assets/images/projectsLogo/projectLogo12.jpeg',
+                technologies: ['Bridge', 'Multi-Chain', 'Interoperability', 'DeFi'],
+                liveLink: 'https://buildingblockshk.com',
+                githubLink: '#'
+            },
+            {
+                id: 13,
+                category: 'ecom_crm',
+                categories: ['ecom_crm'],
+                categoryLabel: 'E-commerce & CRM',
+                title: 'Softworks Studio',
+                description: 'Revolutionary customer relationship management platform built on blockchain technology. Automate customer interactions, track engagement on-chain, and leverage smart contracts for loyalty programs and customer rewards.',
+                overlayTitle: 'Blockchain CRM Solution',
+                  image: 'assets/images/projectsLogo/projectLogo13.jpeg',
+                technologies: ['CRM', 'Automation', 'Smart Contracts', 'Customer Analytics'],
+                liveLink: 'https://www.softworks.hk',
+                githubLink: '#'
+            },
+            {
+                id: 14,
+                category: 'web3DApp',
+                categories: ['web3DApp', 'blockchain'],
+                categoryLabel: 'Web3 DApp',
+                title: 'BURSTPAY',
+                description: 'Beautiful and customizable smart pages designed specifically for showcasing NFT collections. Features real-time wallet integration, collection stats, rarity displays, and social sharing capabilities for artists and collectors.',
+                overlayTitle: 'NFT Display Platform',
+                 image: 'assets/images/projectsLogo/projectLogo14.jpeg',
+                technologies: ['NFT', 'Portfolio', 'Web3', 'Showcase'],
+                liveLink: 'https://burstpay.io',
+                githubLink: '#'
+            },
+            {
+                id: 15,
+                category: 'web3DApp',
+                categories: ['smartPage'],
+                categoryLabel: 'Web3 DApp',
+                title: 'Novus Life Sciences',
+                description: 'Beautiful and customizable smart pages designed specifically for showcasing NFT collections. Features real-time wallet integration, collection stats, rarity displays, and social sharing capabilities for artists and collectors.',
+                overlayTitle: 'NFT Display Platform',
+                  image: 'assets/images/projectsLogo/projectLogo15.jpeg',
+                technologies: ['NFT', 'Portfolio', 'Web3', 'Showcase'],
+                liveLink: 'https://nouvs.vercel.app',
+                githubLink: '#'
+            },
+                 {
+                id: 16,
+                category: 'web3DApp',
+                categories: ['smartPage'],
+                categoryLabel: 'Web3 DApp',
+                title: 'Trap Project 製伏工場',
+                description: 'Beautiful and customizable smart pages designed specifically for showcasing NFT collections. Features real-time wallet integration, collection stats, rarity displays, and social sharing capabilities for artists and collectors.',
+                overlayTitle: 'NFT Display Platform',
+                  image: 'assets/images/projectsLogo/projectLogo16.jpeg',
+                technologies: ['NFT', 'Portfolio', 'Web3', 'Showcase'],
+                liveLink: 'https://trapproject.vercel.app',
+                githubLink: '#'
+            },
+             {
+                id: 17,
+                category: 'web3DApp',
+                categories: ['smartPage'],
+                categoryLabel: 'Web3 DApp',
+                title: 'Cold Brew Factory',
+                description: 'Beautiful and customizable smart pages designed specifically for showcasing NFT collections. Features real-time wallet integration, collection stats, rarity displays, and social sharing capabilities for artists and collectors.',
+                overlayTitle: 'NFT Display Platform',
+                 image: 'assets/images/projectsLogo/projectLogo17.jpeg',
+                technologies: ['NFT', 'Portfolio', 'Web3', 'Showcase'],
+                liveLink: 'https://coldbrewfactory.vercel.app/',
+                githubLink: '#'
+            },
+             {
+                id: 18,
+                category: 'web3DApp',
+                categories: ['smartPage'],
+                categoryLabel: 'Web3 DApp',
+                title: '舒迅運動及物理治療中心 ',
+                description: 'Beautiful and customizable smart pages designed specifically for showcasing NFT collections. Features real-time wallet integration, collection stats, rarity displays, and social sharing capabilities for artists and collectors.',
+                overlayTitle: 'NFT Display Platform',
+                image: 'assets/images/projectsLogo/projectLogo18.jpeg',
+                technologies: ['NFT', 'Portfolio', 'Web3', 'Showcase'],
+                liveLink: 'https://pegasus-physio.vercel.app/',
+                githubLink: '#'
+            },
+            {
+                id: 19,
+                category: 'web3DApp',
+                categories: ['smartPage'],
+                categoryLabel: 'Web3 DApp',
+                title: 'Jolly Fine Food 來發記',
+                description: 'Beautiful and customizable smart pages designed specifically for showcasing NFT collections. Features real-time wallet integration, collection stats, rarity displays, and social sharing capabilities for artists and collectors.',
+                overlayTitle: 'NFT Display Platform',
+                image: 'assets/images/projectsLogo/projectLogo19.jpeg',
+                technologies: ['NFT', 'Portfolio', 'Web3', 'Showcase'],
+                liveLink: 'https://jollyfinefood.vercel.app/',
+                githubLink: '#'
+            },
+                        {
+                id: 20,
+                category: 'web3DApp',
+                categories: ['smartPage'],
+                categoryLabel: 'Web3 DApp',
+                title: 'NEUE®',
+                description: 'Beautiful and customizable smart pages designed specifically for showcasing NFT collections. Features real-time wallet integration, collection stats, rarity displays, and social sharing capabilities for artists and collectors.',
+                overlayTitle: 'NFT Display Platform',
+                image: 'assets/images/projectsLogo/projectLogo20.jpeg',
+                technologies: ['NFT', 'Portfolio', 'Web3', 'Showcase'],
+                liveLink: 'https://neue-skincare.vercel.app/',
+                githubLink: '#'
+            },
+        ];
+
+        // Function to create project card HTML
+        function createProjectCard(project) {
+            const categories = getProjectCategories(project);
+            const categoryLabels = categories.length
+                ? categories.map(cat => CATEGORY_LABELS[cat] || project.categoryLabel || cat)
+                : [project.categoryLabel || fallbackCategoryLabel];
+
+                 return `
+                <div class="project-card" data-categories="${categories.join(',')}">
+                    <div class="project-image">
+                        <img src="${project.image}" alt="${project.title}">
+                        <div class="project-overlay">
+                          
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category-list">
+                            ${categoryLabels.map(label => `<span class="project-category">${label}</span>`).join('')}
+                        </div>
+                        <h3>${project.title}</h3>
+                       
+                        <div class="project-links">
+                            <a href="${project.liveLink}" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Site
+                            </a>
+                  
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to render all projects
+        function renderProjects(filter = 'all') {
+            const projectsGrid = document.getElementById('projectsGrid');
+            projectsGrid.innerHTML = '';
+            
+            const filteredProjects = filter === 'all' 
+                ? projectsData 
+                : projectsData.filter(project => {
+                    const categories = getProjectCategories(project);
+                    return categories.includes(filter);
+                });
+            
+            filteredProjects.forEach(project => {
+                projectsGrid.innerHTML += createProjectCard(project);
+            });
+
+            // Re-observe new elements for animations
+            document.querySelectorAll('.project-card, .footer-column').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Initialize projects on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProjects();
+        });
+
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                filterTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                // Re-render projects with filter
+                renderProjects(filter);
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Counter animation for stats
+                    if (entry.target.classList.contains('stat-item')) {
+                        const counter = entry.target.querySelector('.stat-number');
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        let count = 0;
+                        const increment = target / 50;
+                        
+                        const updateCounter = () => {
+                            if (count < target) {
+                                count += increment;
+                                counter.textContent = Math.ceil(count);
+                                setTimeout(updateCounter, 30);
+                            } else {
+                                counter.textContent = target + '+';
+                            }
+                        };
+                        updateCounter();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Connect wallet button
+        document.querySelectorAll('.connect-wallet-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                window.open('https://signum.network/wallet', '_blank');
+            });
+        });
+
+        // Scroll Progress Bar & Header scroll effect
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+            
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

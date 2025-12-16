@@ -1,0 +1,3473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Solutions - IHASHING TECHNOLOGY GROUP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="style/productsandsolutions.css"> -->
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --primary: #721b7b;
+            --secondary: #00579d;
+            --accent-orange: #fa5716;
+            --accent-red: #DC3545;
+            --white: #FFFFFF;
+            --alabaster: #f8f8f8;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--white);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #f8f8f8 25%, transparent 25%),
+                linear-gradient(-45deg, #f8f8f8 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f8f8f8 75%),
+                linear-gradient(-45deg, transparent 75%, #f8f8f8 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            animation: bgMove 20s linear infinite;
+            opacity: 0.03;
+        }
+
+        @keyframes bgMove {
+            0% {
+                background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            }
+
+            100% {
+                background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+            animation: logoGlow 3s infinite;
+        }
+
+        @keyframes logoGlow {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            display: inline-block;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .connect-wallet-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .connect-wallet-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .connect-wallet-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .connect-wallet-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(114, 27, 123, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at top left, rgba(114, 27, 123, 0.12), transparent 55%),
+                radial-gradient(circle at bottom right, rgba(0, 87, 157, 0.12), transparent 50%),
+                linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.04) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 220%;
+            height: 220%;
+            background: radial-gradient(circle, rgba(114, 27, 123, 0.08) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 30px);
+            mix-blend-mode: screen;
+            opacity: 0.4;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .hero-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.15;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-light);
+            max-width: 620px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 26px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .hero-btn i {
+            font-size: 16px;
+        }
+
+        .hero-btn-primary {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            box-shadow: 0 12px 30px rgba(0, 87, 157, 0.25);
+        }
+
+        .hero-btn-outline {
+            color: var(--secondary);
+            border: 1px solid rgba(0, 87, 157, 0.4);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(114, 27, 123, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 80px;
+            }
+
+            .hero-container {
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .hero-copy {
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            animation: expandWidth 1s ease;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            animation: expandWidth 1s ease;
+        }
+
+            .section-title-02 {
+            font-size: 36px;
+            font-weight: 700;
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .section-title-02::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            animation: expandWidth 1s ease;
+        }
+        @keyframes expandWidth {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 80px;
+            }
+        }
+
+        /* Product Detail Styles */
+        .product-detail {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .product-detail.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-detail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s;
+        }
+
+        .product-detail:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-detail:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(114, 27, 123, 0.2);
+        }
+
+        .product-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 30px;
+        }
+
+        .product-icon-large {
+            font-size: 64px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        .product-title-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .product-title-section p {
+            color: var(--text-light);
+            font-size: 18px;
+        }
+
+        .product-content {
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .product-features {
+            background: var(--alabaster);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .product-features h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-features h3 i {
+            margin-right: 10px;
+        }
+
+        .product-features ul {
+            list-style: none;
+        }
+
+        .product-features ul li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+            transition: transform 0.3s;
+        }
+
+        .product-features ul li:hover {
+            transform: translateX(5px);
+        }
+
+        .product-features ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .product-description {
+            padding: 0;
+        }
+
+        .product-description h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .product-description p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(114, 27, 123, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 12px 30px;
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Solution Tabs */
+        .solution-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--white);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .tab-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Solution Content */
+        .solution-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .solution-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Quick Navigation Section */
+        .quick-nav-section {
+            padding: 80px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .quick-nav-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(114, 27, 123, 0.02) 0%, rgba(0, 87, 157, 0.02) 100%);
+            pointer-events: none;
+        }
+
+        .quick-nav-section .section-title {
+            text-align: center;
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quick-nav-section .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 17px;
+            max-width: 650px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quick-nav-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quick-nav-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 250px;
+            flex-shrink: 0;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            text-decoration: none;
+            display: block;
+        }
+
+        .quick-nav-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(250, 87, 22, 0.1), transparent);
+            transform: translate(-50%, -50%);
+            transition: all 0.6s;
+        }
+
+        .quick-nav-card:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .quick-nav-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--accent-orange);
+            box-shadow: 0 15px 40px rgba(250, 87, 22, 0.2);
+        }
+
+        .quick-nav-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--white);
+            transition: all 0.4s;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 20px rgba(114, 27, 123, 0.3);
+        }
+
+        .quick-nav-card:hover .quick-nav-icon {
+            transform: rotateY(360deg);
+            background: linear-gradient(135deg, var(--accent-orange), var(--primary));
+            box-shadow: 0 12px 30px rgba(250, 87, 22, 0.4);
+        }
+
+        .quick-nav-title {
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+        }
+
+        .quick-nav-card:hover .quick-nav-title {
+            color: var(--accent-orange);
+        }
+
+        .quick-nav-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: rgba(250, 87, 22, 0.1);
+            border-radius: 50%;
+            color: var(--accent-orange);
+            font-size: 14px;
+            margin-top: 10px;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quick-nav-card:hover .quick-nav-arrow {
+            background: var(--accent-orange);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .quick-nav-section {
+                padding: 60px 0;
+            }
+
+            .quick-nav-section .section-title {
+                font-size: 28px;
+            }
+
+            .quick-nav-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .quick-nav-card {
+                padding: 25px 15px;
+            }
+
+            .quick-nav-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+
+            .quick-nav-title {
+                font-size: 16px;
+            }
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 87, 157, 0.2);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            background: var(--alabaster);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .service-features h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .service-features ul {
+            list-style: none;
+        }
+
+        .service-features ul li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+            transition: transform 0.3s;
+        }
+
+        .service-features ul li:hover {
+            transform: translateX(5px);
+        }
+
+        .service-features ul li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-size: 12px;
+            transition: transform 0.3s;
+        }
+
+        .service-features ul li:hover::before {
+            transform: rotate(90deg);
+        }
+
+        .service-link {
+            color: var(--secondary);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .service-link:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Process Section */
+        .process-section {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.05) 100%);
+            padding: 80px 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .process-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+        }
+
+        /* Our Services Section */
+        .our-services-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .our-services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .our-service-card {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.05) 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            border: 2px solid transparent;
+        }
+
+        .our-service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .our-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 0;
+        }
+
+        .our-service-card:hover::before {
+            opacity: 0.95;
+        }
+
+        .our-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(114, 27, 123, 0.3);
+            border-color: var(--accent-orange);
+        }
+
+        .our-service-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .our-service-icon {
+            font-size: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            transition: all 0.4s;
+        }
+
+        .our-service-card:hover .our-service-icon {
+            transform: scale(1.1) rotateY(360deg);
+            -webkit-text-fill-color: var(--white);
+        }
+
+        .our-service-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            transition: color 0.4s;
+        }
+
+        .our-service-card:hover h3 {
+            color: var(--white);
+        }
+
+        .our-service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            transition: color 0.4s;
+        }
+
+        .our-service-card:hover p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .our-service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .our-service-features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+
+        .our-service-card:hover .our-service-features li {
+            color: var(--white);
+        }
+
+        .our-service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .our-service-features li:hover::before {
+            transform: scale(1.3);
+        }
+
+        .our-service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: var(--white);
+        }
+
+        .our-service-card:hover .our-service-link {
+            background: var(--accent-orange);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        /* Case Studies Section */
+        .case-studies {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(250, 87, 22, 0.05) 100%);
+            padding: 80px 0;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .case-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .case-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(250, 87, 22, 0.2);
+        }
+
+        .case-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--alabaster), rgba(250, 87, 22, 0.1));
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 18px;
+        }
+
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .case-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .case-content {
+            padding: 30px;
+        }
+
+        .case-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .case-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .case-results {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .result-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .result-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 5px;
+        }
+
+        .result-label {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .case-link {
+            color: var(--secondary);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .case-link:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Clients Section */
+        .clients-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .client-logo {
+            background: var(--alabaster);
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .client-logo.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .client-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(114, 27, 123, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .client-logo:hover::before {
+            left: 100%;
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 87, 157, 0.15);
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            max-height: 60px;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .client-logo:hover img {
+            filter: grayscale(0%);
+        }
+
+        .client-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        /* Tech Stack Section */
+        .tech-stack-section {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(0, 87, 157, 0.05) 100%);
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .tech-stack-image-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .tech-stack-image-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tech-stack-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 87, 157, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tech-stack-image:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0, 87, 157, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .tech-stack-section {
+                padding: 60px 0;
+            }
+
+            .tech-stack-image {
+                border-radius: 12px;
+            }
+        }
+
+        /* Web3 Marketing Section */
+        .web3-marketing-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(250, 87, 22, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .web3-marketing-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(250, 87, 22, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .marketing-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .marketing-intro {
+            position: relative;
+        }
+
+        .marketing-image {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(250, 87, 22, 0.2);
+        }
+
+        .marketing-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .marketing-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .marketing-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(114, 27, 123, 0.7), rgba(250, 87, 22, 0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .marketing-image:hover .marketing-image-overlay {
+            opacity: 1;
+        }
+
+        .marketing-image-overlay i {
+            font-size: 60px;
+            color: var(--white);
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .marketing-intro h2 {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .marketing-intro .highlight {
+            color: var(--accent-orange);
+        }
+
+        .marketing-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .marketing-features {
+            display: grid;
+            gap: 25px;
+        }
+
+        .marketing-feature-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marketing-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, var(--accent-orange), var(--primary));
+            transition: height 0.4s;
+        }
+
+        .marketing-feature-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 12px 32px rgba(250, 87, 22, 0.15);
+        }
+
+        .marketing-feature-card:hover::before {
+            height: 100%;
+        }
+
+        .marketing-feature-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .marketing-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--primary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(250, 87, 22, 0.3);
+        }
+
+        .marketing-feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .marketing-feature-text {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-left: 63px;
+        }
+
+        @media (max-width: 968px) {
+            .marketing-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .marketing-intro h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .web3-marketing-section {
+                padding: 60px 0;
+            }
+
+            .marketing-intro h2 {
+                font-size: 28px;
+            }
+
+            .marketing-feature-card {
+                padding: 20px;
+            }
+
+            .marketing-feature-text {
+                padding-left: 0;
+                margin-top: 10px;
+            }
+        }
+
+        /* Corporate Services Section */
+        .corporate-services-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .corporate-services-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: bgMove 30s linear infinite;
+            opacity: 0.3;
+        }
+
+        .corporate-services-section .section-title {
+            color: var(--white);
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .corporate-services-section .section-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .corporate-services-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .corporate-info {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .corporate-info h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .corporate-info h3 i {
+            font-size: 32px;
+            color: var(--accent-orange);
+        }
+
+        .corporate-info p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .corporate-highlights {
+            display: grid;
+            gap: 20px;
+        }
+
+        .corporate-highlight-item {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+            padding: 20px;
+            background: var(--alabaster);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .corporate-highlight-item:hover {
+            transform: translateX(5px);
+            background: rgba(114, 27, 123, 0.05);
+        }
+
+        .corporate-highlight-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .corporate-highlight-text {
+            flex: 1;
+        }
+
+        .corporate-highlight-text h4 {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .corporate-highlight-text p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .corporate-services-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .corporate-service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .corporate-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .corporate-service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-orange);
+            box-shadow: 0 15px 40px rgba(250, 87, 22, 0.3);
+        }
+
+        .corporate-service-card:hover::before {
+            opacity: 1;
+        }
+
+        .corporate-service-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .corporate-service-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .corporate-service-title {
+            color: var(--white);
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .corporate-service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .corporate-service-list li {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .corporate-service-list li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        @media (max-width: 1024px) {
+            .corporate-services-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .corporate-services-section {
+                padding: 60px 0;
+            }
+
+            .corporate-services-section .section-title {
+                font-size: 32px;
+            }
+
+            .corporate-info {
+                padding: 30px 20px;
+            }
+
+            .corporate-service-card {
+                padding: 25px 20px;
+            }
+        }
+
+        /* Free Web3 Tools Section */
+        .free-tools-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(0, 87, 157, 0.05) 100%);
+            position: relative;
+        }
+
+        .free-tools-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(180deg, transparent 0%, rgba(114, 27, 123, 0.03) 100%);
+            pointer-events: none;
+        }
+
+        .free-tools-section .section-title {
+            text-align: center;
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .free-tools-section .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .free-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 0;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-orange);
+            box-shadow: 0 20px 50px rgba(250, 87, 22, 0.25);
+        }
+
+        .tool-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .tool-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(114, 27, 123, 0.3);
+            transition: all 0.4s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-card:hover .tool-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(250, 87, 22, 0.4);
+        }
+
+        .tool-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-badge {
+            display: inline-block;
+            background: rgba(250, 87, 22, 0.1);
+            color: var(--accent-orange);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--primary));
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(250, 87, 22, 0.3);
+        }
+
+        .tool-link:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(250, 87, 22, 0.5);
+        }
+
+        .tool-link i {
+            transition: transform 0.3s;
+        }
+
+        .tool-link:hover i {
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 768px) {
+            .free-tools-section {
+                padding: 60px 0;
+            }
+
+            .free-tools-section .section-title {
+                font-size: 32px;
+            }
+
+            .free-tools-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .tool-card {
+                padding: 30px 20px;
+            }
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 80px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            animation: bgMove 20s linear infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta {
+            background: var(--white);
+            color: var(--primary);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            animation: bgMove 20s linear infinite;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-column {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .footer-column.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s;
+        }
+
+        .footer-column:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .footer-column:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .footer-column:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .footer-column:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .footer-column:nth-child(5) {
+            transition-delay: 0.5s;
+        }
+
+        .footer-column:nth-child(6) {
+            transition-delay: 0.6s;
+        }
+
+        .footer-column:nth-child(7) {
+            transition-delay: 0.7s;
+        }
+
+        .footer-column:nth-child(8) {
+            transition-delay: 0.8s;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-orange);
+            animation: expandWidth 1s ease;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .footer-column.visible ul li {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.3s;
+        }
+
+        .footer-column.visible ul li:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .footer-column.visible ul li:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .footer-column.visible ul li:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .footer-column.visible ul li:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .footer-column.visible ul li:nth-child(5) {
+            transition-delay: 0.5s;
+        }
+
+        .footer-column.visible ul li:nth-child(6) {
+            transition-delay: 0.6s;
+        }
+
+        .footer-column.visible ul li:nth-child(7) {
+            transition-delay: 0.7s;
+        }
+
+        .footer-column.visible ul li:nth-child(8) {
+            transition-delay: 0.8s;
+        }
+
+        .footer-column ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-orange);
+            transform: translateX(5px);
+        }
+
+        .footer-column p {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-5px) rotate(360deg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 5px 0;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--white);
+                transition: left 0.3s;
+                z-index: 99;
+                overflow-y: auto;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            nav.active ul li {
+                opacity: 1;
+                transform: translateX(0);
+                transition: all 0.3s;
+            }
+
+            nav.active ul li:nth-child(1) {
+                transition-delay: 0.1s;
+            }
+
+            nav.active ul li:nth-child(2) {
+                transition-delay: 0.2s;
+            }
+
+            nav.active ul li:nth-child(3) {
+                transition-delay: 0.3s;
+            }
+
+            nav.active ul li:nth-child(4) {
+                transition-delay: 0.4s;
+            }
+
+            nav.active ul li:nth-child(5) {
+                transition-delay: 0.5s;
+            }
+
+            nav.active ul li:nth-child(6) {
+                transition-delay: 0.6s;
+            }
+
+            nav.active ul li:nth-child(7) {
+                transition-delay: 0.7s;
+            }
+
+            nav.active ul li:nth-child(8) {
+                transition-delay: 0.8s;
+            }
+
+            nav.active ul li:nth-child(9) {
+                transition-delay: 0.9s;
+            }
+
+            nav.active ul li:nth-child(10) {
+                transition-delay: 1.0s;
+            }
+
+            .connect-wallet-btn {
+                margin-top: 20px;
+                width: 100%;
+            }
+
+            .solution-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 200px;
+                text-align: center;
+            }
+
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .our-services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .our-services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange), var(--secondary));
+            z-index: 10000;
+            transition: width 0.1s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="IHASHING Logo"
+                    style="height: 30px; width: auto; margin-right: 10px; vertical-align: middle;">
+                <p>IHASHING</p>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="iacademy.html">iAcademy</a></li>
+                    <!-- <li><a href="isolution.html">iSolution</a></li> -->
+                    <li><a href="productsandsolutions.html">Products &amp; Solutions</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="press.html">Press</a></li>
+                    <li><a href="https://medium.com/ihashing" target="_blank">Blog</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-copy">
+                <h1>Products & Solutions</h1>
+                <p>Empower SME with FutureSkills Academy, Green Web3 Solutions & dAPP Development.</p>
+            </div>
+            <div class="hero-actions">
+                <a href="#solutions-nav" class="hero-btn hero-btn-primary">
+                    Explore Solutions
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="#products" class="hero-btn hero-btn-outline">
+                    Explore Products
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation Section -->
+    <section class="quick-nav-section" id="solutions-nav">
+        <div class="container">
+            <h2 class="section-title">Explore Our Services</h2>
+            <p class="section-subtitle">
+                Discover comprehensive blockchain solutions tailored to your business needs. Click to navigate to each
+                service area.
+            </p>
+
+            <div class="quick-nav-grid">
+                <!-- Green Web3 Solutions -->
+                <a href="#web3solutions" class="quick-nav-card">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="quick-nav-title">Green Web3 Solutions</h3>
+                    <div class="quick-nav-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </a>
+
+                <!-- Web3 Cybersecurity -->
+                <a href="#web3solutions" class="quick-nav-card">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="quick-nav-title">Web3 Cybersecurity</h3>
+                    <div class="quick-nav-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </a>
+
+                <!-- dApp Development -->
+                <a href="#web3solutions" class="quick-nav-card">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="quick-nav-title">dApp Development</h3>
+                    <div class="quick-nav-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </a>
+
+                <!-- Web3 Marketing -->
+                <a href="#web3-marketing" class="quick-nav-card">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="quick-nav-title">Web3 Marketing</h3>
+                    <div class="quick-nav-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </a>
+
+                <!-- Corporate Services -->
+                <a href="#corporate-services" class="quick-nav-card">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="quick-nav-title">Corporate Services, Licenses & Capital</h3>
+                    <div class="quick-nav-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </a>
+
+                <!-- Free Web3 Tools -->
+                <a href="#free-tools" class="quick-nav-card">
+                    <div class="quick-nav-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="quick-nav-title">Free Web3 Tools</h3>
+                    <div class="quick-nav-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="section" id="web3solutions">
+        <div class="container">
+            <h2 class="section-title">Our Integrated Solutions</h2>
+
+            <!-- Solution Tabs -->
+            <!-- <div class="solution-tabs">
+                <button class="tab-btn active" data-tab="blockchain">Blockchain Integration</button>
+                <button class="tab-btn" data-tab="web3">Web3 Marketing</button>
+                <button class="tab-btn" data-tab="capital">Capital Advisory</button>
+            </div> -->
+
+            <!-- Green Web3 Solutions Content -->
+            <div class="solution-content active" id="blockchain">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Green Web3 Solutions</h3>
+                        <p>Sustainable blockchain solutions designed for environmental responsibility and energy
+                            efficiency.</p>
+                        <div class="service-features">
+                            <h4>Development Services</h4>
+                            <ul>
+                                <li>DApp Development</li>
+                                <li>Tokenization</li>
+                                <li>RWA Development</li>
+                                <li>Smart Contracts Development</li>
+                                <li>Blockchain Wallet Development</li>
+                            </ul>
+                        </div>
+                        <!-- <a href="#" class="service-link">
+                            Start Green Project <i class="fas fa-arrow-right"></i>
+                        </a> -->
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Web3 Cybersecurity</h3>
+                        <p>Comprehensive security solutions to protect your Web3 applications and digital assets from
+                            threats.</p>
+                        <div class="service-features">
+                            <h4>Security Services</h4>
+                            <ul>
+                                <li>Smart Contract Audit</li>
+                                <li>Penetration Testing</li>
+                                <li>Security Architecture Review</li>
+                                <li>Vulnerability Assessment</li>
+                                <li>Incident Response</li>
+                            </ul>
+                        </div>
+                        <!-- <a href="#" class="service-link">
+                            Secure Your Project <i class="fas fa-arrow-right"></i>
+                        </a> -->
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>dApp Development</h3>
+                        <p>Build robust decentralized applications with comprehensive smart contract auditing services.
+                        </p>
+                        <div class="service-features">
+                            <h4>Development & Audit</h4>
+                            <ul>
+                                <li>Custom dApp Development</li>
+                                <li>Smart Contract Audit</li>
+                                <li>Frontend Integration</li>
+                                <li>Multi-Chain Support</li>
+                                <li>Performance Optimization</li>
+                            </ul>
+                        </div>
+                        <!-- <a href="#" class="service-link">
+                            Build dApp <i class="fas fa-arrow-right"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web3 Marketing Content -->
+            <div class="solution-content" id="web3">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Web3 Marketing</h3>
+                        <p>Advanced marketing strategies leveraging AI and blockchain technology for maximum engagement
+                            and reach.</p>
+                        <div class="service-features">
+                            <h4>Marketing Solutions</h4>
+                            <ul>
+                                <li>AI Influencer / KOL</li>
+                                <li>AI Content Marketing</li>
+                                <li>dApp Listing</li>
+                                <li>Community Growth</li>
+                                <li>Brand Strategy</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="service-link">
+                            Boost Marketing <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Corporate Services, Licenses & Capital</h3>
+                        <p>Comprehensive corporate services including licensing, regulatory compliance, and capital
+                            advisory for Web3 businesses.</p>
+                        <div class="service-features">
+                            <h4>Corporate Solutions</h4>
+                            <ul>
+                                <li>Licensing & Compliance</li>
+                                <li>Corporate Structure Setup</li>
+                                <li>Capital Advisory</li>
+                                <li>Legal Documentation</li>
+                                <li>Regulatory Navigation</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="service-link">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Free Web3 Tools</h3>
+                        <p>Access our comprehensive suite of free Web3 tools designed to enhance your blockchain
+                            experience and knowledge.</p>
+                        <div class="service-features">
+                            <h4>Available Tools</h4>
+                            <ul>
+                                <li>Web3 Glossary</li>
+                                <li>Opti-Prompt v1</li>
+                                <li>Skincare Queen</li>
+                                <li>Finance Queen</li>
+                                <li>AMM Queen</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="service-link">
+                            Access Tools <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capital Advisory Content -->
+            <div class="solution-content" id="capital">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>HK to AU Expansion</h3>
+                        <p>Strategic guidance for Hong Kong businesses looking to expand into the Australian market and
+                            vice versa.</p>
+                        <div class="service-features">
+                            <h4>Expansion Services</h4>
+                            <ul>
+                                <li>Market Entry Strategy</li>
+                                <li>Regulatory Navigation</li>
+                                <li>Partner Identification</li>
+                                <li>Legal Structure Setup</li>
+                                <li>Cultural Integration</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="service-link">
+                            Expand Business <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Capital Raising</h3>
+                        <p>Connect with investors and secure funding for your blockchain and Web3 ventures in the
+                            Asia-Pacific region.</p>
+                        <div class="service-features">
+                            <h4>Funding Services</h4>
+                            <ul>
+                                <li>Investor Pitch Preparation</li>
+                                <li>Due Diligence Support</li>
+                                <li>Term Sheet Negotiation</li>
+                                <li>Token Sale Management</li>
+                                <li>VC Introductions</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="service-link">
+                            Secure Funding <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Strategic Partnerships</h3>
+                        <p>Forge strategic partnerships with key players in the blockchain ecosystem to accelerate your
+                            growth.</p>
+                        <div class="service-features">
+                            <h4>Partnership Services</h4>
+                            <ul>
+                                <li>Partner Identification</li>
+                                <li>Partnership Structuring</li>
+                                <li>Joint Venture Setup</li>
+                                <li>Ecosystem Integration</li>
+                                <li>Long-term Strategy</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="service-link">
+                            Build Partnerships <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <h2 class="section-title">Our Integration Process</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Discovery & Analysis</h3>
+                    <p>Understand your business needs and assess integration opportunities</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Strategy Design</h3>
+                    <p>Develop tailored blockchain integration strategy and roadmap</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Implementation</h3>
+                    <p>Execute integration with minimal business disruption</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Optimization & Growth</h3>
+                    <p>Continuously improve and scale your blockchain solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+
+
+    <!-- Case Studies Section -->
+
+
+
+
+    <!-- Web3 Marketing Section -->
+    <section class="web3-marketing-section" id="web3-marketing">
+        <div class="container">
+            <div class="marketing-content">
+                <div class="marketing-intro">
+                    <div class="marketing-image">
+                        <img src="assets/images/web3markerting.png" alt="Web3 Marketing">
+                        <div class="marketing-image-overlay">
+                            <!-- <i class="fas fa-rocket"></i> -->
+                        </div>
+                    </div>
+                    <h2>Elevate Your Brand with <span class="highlight">Web3 Marketing</span></h2>
+                    <p class="marketing-description">
+                        Transform your Web3 project's visibility with our cutting-edge marketing solutions.
+                        We combine AI-powered strategies, influential partnerships, and strategic positioning
+                        to amplify your reach in the decentralized ecosystem.
+                    </p>
+
+                </div>
+
+                <div class="marketing-features">
+                    <!-- AI Influencer / KOL -->
+                    <div class="marketing-feature-card">
+                        <div class="marketing-feature-header">
+                            <div class="marketing-feature-icon">
+                                <i class="fas fa-user-astronaut"></i>
+                            </div>
+                            <h3 class="marketing-feature-title">AI Influencer / KOL</h3>
+                        </div>
+                        <p class="marketing-feature-text">
+                            Leverage AI-powered virtual influencers and connect with key opinion leaders
+                            to build authentic community engagement and drive project awareness.
+                        </p>
+                    </div>
+
+                    <!-- AI Content Marketing -->
+                    <div class="marketing-feature-card">
+                        <div class="marketing-feature-header">
+                            <div class="marketing-feature-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="marketing-feature-title">AI Content Marketing</h3>
+                        </div>
+                        <p class="marketing-feature-text">
+                            Harness the power of AI to create compelling content strategies, automated
+                            campaigns, and data-driven narratives that resonate with your target audience.
+                        </p>
+                    </div>
+
+                    <!-- dApp Listing -->
+                    <div class="marketing-feature-card">
+                        <div class="marketing-feature-header">
+                            <div class="marketing-feature-icon">
+                                <i class="fas fa-list-alt"></i>
+                            </div>
+                            <h3 class="marketing-feature-title">dApp Listing</h3>
+                        </div>
+                        <p class="marketing-feature-text">
+                            Get your decentralized application featured on major platforms and directories,
+                            ensuring maximum visibility and user acquisition across the Web3 landscape.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Services Section -->
+    <section class="corporate-services-section" id="corporate-services">
+        <div class="container">
+            <h2 class="section-title-02">Corporate Services, Licenses & Capital</h2>
+            <p class="section-subtitle">
+                Comprehensive corporate solutions to establish, expand, and scale your Web3 business across Hong Kong
+                and Australia
+            </p>
+
+            <div class="corporate-services-content">
+                <!-- Corporate Info -->
+                <div class="corporate-info">
+                    <h3>
+                        <i class="fas fa-building"></i>
+                        Business Expansion Expertise
+                    </h3>
+                    <p>
+                        Navigate the complexities of cross-border business expansion with our specialized services
+                        connecting Hong Kong and Australian markets. We provide end-to-end support for licensing,
+                        regulatory compliance, and capital advisory tailored for Web3 and blockchain enterprises.
+                    </p>
+
+                    <div class="corporate-highlights">
+                        <div class="corporate-highlight-item">
+                            <div class="corporate-highlight-icon">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                            <div class="corporate-highlight-text">
+                                <!-- <h4>HK ↔ AU Market Access</h4> -->
+                                <h4>HK -> AU Market Access</h4>
+                                <p>Strategic guidance for seamless market entry and expansion between Hong Kong and
+                                    Australia</p>
+                            </div>
+                        </div>
+
+                        <div class="corporate-highlight-item">
+                            <div class="corporate-highlight-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="corporate-highlight-text">
+                                <h4>Regulatory Compliance</h4>
+                                <p>Expert navigation of licensing requirements and regulatory frameworks in both
+                                    jurisdictions</p>
+                            </div>
+                        </div>
+
+                        <div class="corporate-highlight-item">
+                            <div class="corporate-highlight-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div class="corporate-highlight-text">
+                                <h4>Capital Advisory</h4>
+                                <p>Connect with investors and secure funding for your blockchain ventures in
+                                    Asia-Pacific</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services List -->
+                <div class="corporate-services-list">
+                    <!-- Licensing Services -->
+                    <div class="corporate-service-card">
+                        <div class="corporate-service-header">
+                            <div class="corporate-service-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3 class="corporate-service-title">Licensing Services</h3>
+                        </div>
+                        <!-- <ul class="corporate-service-list">
+                            <li>Virtual Asset Service Provider (VASP) Licensing</li>
+                            <li>Money Service Operator (MSO) Licenses</li>
+                            <li>Financial Services Licenses</li>
+                            <li>Compliance Framework Setup</li>
+                            <li>Ongoing Regulatory Support</li>
+                        </ul> -->
+                    </div>
+
+                    <!-- Corporate Structuring -->
+                    <div class="corporate-service-card">
+                        <div class="corporate-service-header">
+                            <div class="corporate-service-icon">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <h3 class="corporate-service-title">Corporate Structuring</h3>
+                        </div>
+                        <!-- <ul class="corporate-service-list">
+                            <li>Entity Formation & Registration</li>
+                            <li>Tax Optimization Strategies</li>
+                            <li>Holding Company Structures</li>
+                            <li>Subsidiary Setup</li>
+                            <li>Legal Documentation</li>
+                        </ul> -->
+                    </div>
+
+                    <!-- Capital Solutions -->
+                    <div class="corporate-service-card">
+                        <div class="corporate-service-header">
+                            <div class="corporate-service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="corporate-service-title">Capital Solutions</h3>
+                        </div>
+                        <!-- <ul class="corporate-service-list">
+                            <li>Investor Introductions & Matchmaking</li>
+                            <li>Fundraising Strategy & Execution</li>
+                            <li>Token Sale Advisory</li>
+                            <li>Due Diligence Support</li>
+                            <li>Valuation & Term Sheet Negotiation</li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Product Suite</h2>
+
+            <!-- IHASHING ACADEMY -->
+            <div class="product-detail">
+                <div class="product-header">
+                    <div class="product-icon-large">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="product-title-section">
+                        <h2>IHASHING ACADEMY</h2>
+                        <p>School License No. HKED-2023-123456</p>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-description">
+                        <h3>About the Platform</h3>
+                        <p>IHASHING ACADEMY is a premier educational platform dedicated to blockchain and Web3
+                            technologies. Our comprehensive curriculum covers everything from basic blockchain concepts
+                            to advanced smart contract development.</p>
+                        <p>With our state-of-the-art Learning Management System, students can access course materials,
+                            participate in interactive discussions, and earn industry-recognized certificates that are
+                            verifiable on the blockchain.</p>
+                        <p>Join thousands of professionals who have transformed their careers through our cutting-edge
+                            educational programs.</p>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <a href="iacademy.html" class="btn-primary">
+                        <i class="fas fa-external-link-alt"></i> Visit Academy
+                    </a>
+                </div>
+            </div>
+
+            <!-- IHOST -->
+            <div class="product-detail">
+                <div class="product-header">
+                    <div class="product-icon-large">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="product-title-section">
+                        <h2>IHOST</h2>
+                        <p># IHOST: AI-Agent Powered green SIGNUM dApp Builder, Web3 Store & Community Power-Ups!</p>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-description">
+                        <h3>About the Platform</h3>
+                        <p>IHOST is your one-stop builder for developing and launching innovative decentralized
+                            applications (dApps) on the eco-friendly Signum blockchain. </p>
+                        <p>We empower developers and startupers with the tools and resources they need to bring their
+                            Web3 visions to life.</p>
+                        <p>By utilizing IHOST, you can create sustainable dApps that not only advance technology but
+                            also prioritize environmental responsibility.</p>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <a href="https://store.sigdao.io/" class="btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Browse iHost
+                    </a>
+                </div>
+            </div>
+
+            <!-- Web3 dAPP Store -->
+            <div class="product-detail">
+                <div class="product-header">
+                    <div class="product-icon-large">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="product-title-section">
+                        <h2>Web3 dAPP Store</h2>
+                        <p># STORE.SIGDAO.IO: Your Launchpad to the Future of Decentralized Applications</p>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-description">
+                        <h3>About the Platform</h3>
+                        <p>The Sigdao Web3Store is a platform to register tools and applications for the Signum
+                            eco-system.</p>
+                        <p>On one hand this platform serves as a kind of application store, but also as an exhibition
+                            center for developers.</p>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <a href="https://store.sigdao.io/" class="btn-primary">
+                        <i class="fas fa-store"></i> Browse Web3Store
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <!-- <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Let's discuss how our integrated blockchain solutions can accelerate your growth in the Asia-Pacific region.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-cta">Schedule Consultation</a>
+                    <a href="#" class="btn-cta btn-outline">Download Brochure</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Free Web3 Tools Section -->
+    <section class="free-tools-section" id="free-tools">
+        <div class="container">
+            <h2 class="section-title">Free Web3 Tools</h2>
+            <p class="section-subtitle">
+                Access our comprehensive suite of free tools designed to enhance your Web3 experience and knowledge
+            </p>
+
+            <div class="free-tools-grid">
+                <!-- Web3 Glossary -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="tool-name">Web3 Glossary</h3>
+                    <span class="tool-badge" style="background: linear-gradient(135deg, #666, #999);">COMING SOON</span>
+                    <a href="#" class="tool-link" style="pointer-events: none; opacity: 0.6;">
+                        Coming Soon <i class="fas fa-clock"></i>
+                    </a>
+                </div>
+
+                <!-- Opti-Prompt v1 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="tool-name">Opti-Prompt v1</h3>
+                    <span class="tool-badge" style="background: linear-gradient(135deg, #666, #999);">COMING SOON</span>
+                    <a href="#" class="tool-link" style="pointer-events: none; opacity: 0.6;">
+                        Coming Soon <i class="fas fa-clock"></i>
+                    </a>
+                </div>
+
+                <!-- Skincare Queen -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="tool-name">Skincare Queen</h3>
+                    <span class="tool-badge" style="background: linear-gradient(135deg, #666, #999);">COMING SOON</span>
+                    <a href="#" class="tool-link" style="pointer-events: none; opacity: 0.6;">
+                        Coming Soon <i class="fas fa-clock"></i>
+                    </a>
+                </div>
+
+                <!-- Finance Queen -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="tool-name">Finance Queen</h3>
+                    <span class="tool-badge" style="background: linear-gradient(135deg, #666, #999);">COMING SOON</span>
+                    <a href="#" class="tool-link" style="pointer-events: none; opacity: 0.6;">
+                        Coming Soon <i class="fas fa-clock"></i>
+                    </a>
+                </div>
+
+                <!-- AMM Queen -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="tool-name">AMM Queen</h3>
+                    <span class="tool-badge" style="background: linear-gradient(135deg, #666, #999);">COMING SOON</span>
+                    <a href="#" class="tool-link" style="pointer-events: none; opacity: 0.6;">
+                        Coming Soon <i class="fas fa-clock"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <!-- <section class="section clients-section">
+        <div class="container">
+            <h2 class="section-title">Trusted by Leading Organizations</h2>
+            <div class="clients-grid">
+                <div class="client-logo">
+                    <div class="client-name">FinTech Global</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-name">Supply Chain Pro</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-name">RetailVerse</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-name">Healthcare Plus</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-name">Energy Chain</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-name">Real Estate DAO</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-name">Gaming Metaverse</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-name">Education Chain</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Tech Stack Section -->
+    <section class="section tech-stack-section">
+        <div class="container">
+            <h2 class="section-title">Our Technology Stack</h2>
+            <div class="tech-stack-image-container">
+                <img src="assets/images/stack2-01.webp" alt="Technology Stack" class="tech-stack-image">
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>IHASHING</h3>
+                    <p>Empower SME with Blockchain Academy,
+                        Green Web3 Solutions & dAPP Development</p>
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/company/ihashing/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/ihashing.hk"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ihashing.hk/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCgOn8PuxHSinqjXF8JsARLA"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://github.com/ihashing"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="iacademy.html">iAcademy</a></li>
+                        <li><a href="products-and-solutions.html">Products & Solutions</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="press.html">Press</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="termsofservice.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Office 1301, 13/F, One Portside, 29 Tai Yau Street, San Po
+                        Kong, Hong Kong</p>
+
+                    <p><i class="fas fa-envelope"></i> info@ihashing.hk</p>
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2017-2025 ❤️ iHashing Technology Co., Ltd. – All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function () {
+            this.classList.toggle('active');
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Connect wallet button
+        document.querySelectorAll('.connect-wallet-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                window.open('https://signum.network/wallet', '_blank');
+            });
+        });
+
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const solutionContents = document.querySelectorAll('.solution-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                // Remove active class from all tabs and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                solutionContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Show corresponding content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .process-step, .case-card, .client-logo, .tech-stack-image-container, .our-service-card, .footer-column, .product-detail').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Connect wallet button
+        document.querySelectorAll('.connect-wallet-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-check"></i> Connected';
+                    setTimeout(() => {
+                        this.innerHTML = 'Connect Wallet';
+                    }, 2000);
+                }, 2000);
+            });
+        });
+
+        // Scroll Progress Bar & Header scroll effect
+        window.addEventListener('scroll', function () {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

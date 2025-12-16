@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - IHASHING TECHNOLOGY GROUP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/about.css">
+     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- <style>
+        :root {
+            --primary: #721b7b;
+            --secondary: #00579d;
+            --accent-orange: #fa5716;
+            --accent-red: #DC3545;
+            --white: #FFFFFF;
+            --alabaster: #f8f8f8;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--white);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #f8f8f8 25%, transparent 25%),
+                        linear-gradient(-45deg, #f8f8f8 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, #f8f8f8 75%),
+                        linear-gradient(-45deg, transparent 75%, #f8f8f8 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            animation: bgMove 20s linear infinite;
+            opacity: 0.03;
+        }
+        
+        @keyframes bgMove {
+            0% { background-position: 0 0, 0 10px, 10px -10px, -10px 0px; }
+            100% { background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px; }
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+           .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+            animation: logoGlow 3s infinite;
+        }
+        
+        @keyframes logoGlow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            display: inline-block;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .connect-wallet-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .connect-wallet-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .connect-wallet-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .connect-wallet-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(114, 27, 123, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at top left, rgba(114, 27, 123, 0.12), transparent 55%),
+                        radial-gradient(circle at bottom right, rgba(0, 87, 157, 0.12), transparent 50%),
+                        linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.04) 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 220%;
+            height: 220%;
+            background: radial-gradient(circle, rgba(114, 27, 123, 0.08) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 30px);
+            mix-blend-mode: screen;
+            opacity: 0.4;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .hero-container {
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .hero-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: flex-start;
+            text-align: left;
+        }
+        
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.15;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: var(--text-light);
+            max-width: 520px;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 26px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        
+        .hero-btn i {
+            font-size: 15px;
+        }
+        
+        .hero-btn-primary {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            box-shadow: 0 12px 30px rgba(0, 87, 157, 0.25);
+        }
+        
+        .hero-btn-outline {
+            color: var(--secondary);
+            border: 1px solid rgba(0, 87, 157, 0.4);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(114, 27, 123, 0.25);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            animation: expandWidth 1s ease;
+        }
+        
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 80px; }
+        }
+        
+        /* About Content */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .about-text {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        
+        .about-text.visible {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.8s;
+        }
+        
+        .about-text h2 {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .about-text.visible p {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s;
+        }
+        
+        .about-text.visible p:nth-child(2) { transition-delay: 0.2s; }
+        .about-text.visible p:nth-child(3) { transition-delay: 0.4s; }
+        .about-text.visible p:nth-child(4) { transition-delay: 0.6s; }
+        
+        .about-image {
+            opacity: 0;
+            transform: translateX(50px);
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.8s 0.3s;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Values Section */
+        .values-section {
+            background: var(--white);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.05) 100%);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+            border-left: 4px solid transparent;
+        }
+        
+        .value-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(114, 27, 123, 0.2);
+            border-left-color: var(--accent-orange);
+        }
+        
+        .value-number {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+        
+        .value-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* Key Consensus Section */
+        .consensus-section {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(250, 87, 22, 0.05) 100%);
+        }
+        
+        .consensus-list {
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+        
+        .consensus-item {
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        
+        .consensus-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .consensus-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 87, 157, 0.15);
+        }
+        
+        .consensus-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+        }
+        
+        .consensus-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .consensus-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        
+        .gallery-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+        }
+        
+        .gallery-overlay h4 {
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+        
+        .gallery-overlay h4 {
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+        
+        /* Our Story Section */
+        .story-section {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.05) 100%);
+        }
+        
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .story-text {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            line-height: 1.9;
+            color: var(--text-light);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .story-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s;
+        }
+        
+        .story-text::before {
+            content: '\201C';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 80px;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        
+        .story-text p {
+            margin-bottom: 20px;
+        }
+        
+        .story-text strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .story-highlight {
+            background: linear-gradient(135deg, rgba(114, 27, 123, 0.1), rgba(250, 87, 22, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 4px solid var(--accent-orange);
+        }
+        
+        .story-highlight p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        /* Team Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 80px 0;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn-cta {
+            background: var(--white);
+            color: var(--primary);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            animation: bgMove 20s linear infinite;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .footer-column.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s;
+        }
+        
+        .footer-column:nth-child(1) { transition-delay: 0.1s; }
+        .footer-column:nth-child(2) { transition-delay: 0.2s; }
+        .footer-column:nth-child(3) { transition-delay: 0.3s; }
+        .footer-column:nth-child(4) { transition-delay: 0.4s; }
+        .footer-column:nth-child(5) { transition-delay: 0.5s; }
+        .footer-column:nth-child(6) { transition-delay: 0.6s; }
+        .footer-column:nth-child(7) { transition-delay: 0.7s; }
+        .footer-column:nth-child(8) { transition-delay: 0.8s; }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-column p {
+    margin-bottom: 10px;
+}
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-orange);
+            animation: expandWidth 1s ease;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        
+        .footer-column.visible ul li {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.3s;
+        }
+        
+        .footer-column.visible ul li:nth-child(1) { transition-delay: 0.1s; }
+        .footer-column.visible ul li:nth-child(2) { transition-delay: 0.2s; }
+        .footer-column.visible ul li:nth-child(3) { transition-delay: 0.3s; }
+        .footer-column.visible ul li:nth-child(4) { transition-delay: 0.4s; }
+        .footer-column.visible ul li:nth-child(5) { transition-delay: 0.5s; }
+        .footer-column.visible ul li:nth-child(6) { transition-delay: 0.6s; }
+        .footer-column.visible ul li:nth-child(7) { transition-delay: 0.7s; }
+        .footer-column.visible ul li:nth-child(8) { transition-delay: 0.8s; }
+        
+        .footer-column ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-orange);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-5px) rotate(360deg);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+          nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--white);
+                transition: left 0.3s;
+                z-index: 99;
+                overflow-y: auto;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            
+            nav.active ul li {
+                opacity: 1;
+                transform: translateX(0);
+                transition: all 0.3s;
+            }
+            
+            nav.active ul li:nth-child(1) { transition-delay: 0.1s; }
+            nav.active ul li:nth-child(2) { transition-delay: 0.2s; }
+            nav.active ul li:nth-child(3) { transition-delay: 0.3s; }
+            nav.active ul li:nth-child(4) { transition-delay: 0.4s; }
+            nav.active ul li:nth-child(5) { transition-delay: 0.5s; }
+            nav.active ul li:nth-child(6) { transition-delay: 0.6s; }
+            nav.active ul li:nth-child(7) { transition-delay: 0.7s; }
+            nav.active ul li:nth-child(8) { transition-delay: 0.8s; }
+            nav.active ul li:nth-child(9) { transition-delay: 0.9s; }
+            nav.active ul li:nth-child(10) { transition-delay: 1.0s; }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .story-text {
+                padding: 30px;
+            }
+
+            .hero {
+                padding: 90px 0 70px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-container {
+                gap: 32px;
+                align-items: center;
+            }
+
+            .hero-copy {
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+            
+        }
+        
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange), var(--secondary));
+            z-index: 10000;
+            transition: width 0.1s;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+               <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="IHASHING Logo" style="height: 30px; width: auto; margin-right: 10px; vertical-align: middle;"> <p>IHASHING</p>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+              <nav id="mainNav">
+                <ul>
+                    <li><a href="iacademy.html">iAcademy</a></li>
+                    <!-- <li><a href="isolution.html">iSolution</a></li> -->
+                    <li><a href="productsandsolutions.html">Products &amp; Solutions</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="press.html">Press</a></li>
+                   <li><a href="https://medium.com/ihashing" target="_blank">Blog</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-copy">
+                <h1>About IHASHING</h1>
+                <p>Pioneering the future of Web3 and blockchain technology with innovative solutions that transform businesses and empower the decentralized economy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>iHashing specialises in the development and application of Artificial intelligence, Blockchain dApp, Web3 Solutions, Digital Marketing & Extended Reality XR. We are committed to Empower SME with Blockchain Academy, Green Web3 Solutions & dAPP Development.</p>
+                    <p>Our services currently include: VTC NITTP registered and TQUK endorsed FutureSkills courses, Web3 solutions, blockchain infrastructural services, dApp development, smart contract Audit, software technology consultation and digital marketing.</p>
+                    <p>Without PRIVACY & SECURITY, there is no freedom! We take user Privacy very, very seriously. With any product or service developed, privacy is always kept in mind. And Security is what allows people to use a product or service without the fear of their information being compromised. A product or service without security is virtually useless to everyone.</p>
+                    <p>We are founded in 2017 and supported by Cyberport HK. Our clients across Asia extend to Hong Kong, Singapore, Malaysia, Vietnam, Thailand, Taiwan, and Australia.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/company.jpeg" alt="IHASHING Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section values-section">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-number">1</div>
+                    <h3>Transparent</h3>
+                    <p>Every partnership with our clients is based on honesty and openness. Those qualities will be present for every job we work on.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">2</div>
+                    <h3>Innovative</h3>
+                    <p>All of our solutions focus on being innovative and efficient. As we always come up with new ideas, focusing on continuously improving our products and services.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">3</div>
+                    <h3>Sustainable</h3>
+                    <p>We highly value the sustainability of any of our developments, always taking into account every aspect related to your business. Together we'll find the ideal solution for your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 Key Consensus Section -->
+    <section class="section consensus-section">
+        <div class="container">
+            <h2 class="section-title">5 Key Consensus for Smart Partner Selection</h2>
+            <div class="consensus-list">
+                <div class="consensus-item">
+                    <div class="consensus-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="consensus-content">
+                        <h3>Time is Crypto - If You Can't Commit, We Must Omit</h3>
+                        <p>We value commitment and dedication. Time is our most precious resource, and we partner only with those who respect and honor it.</p>
+                    </div>
+                </div>
+                <div class="consensus-item">
+                    <div class="consensus-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="consensus-content">
+                        <h3>Principles Over Profits - Our Ethics Aren't For Sale</h3>
+                        <p>Our core values and ethical standards are non-negotiable. We prioritize integrity and principles above short-term financial gains.</p>
+                    </div>
+                </div>
+                <div class="consensus-item">
+                    <div class="consensus-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="consensus-content">
+                        <h3>Shared Values or No Deals - Farewell to Profit-Only Mindsets</h3>
+                        <p>We seek partners who share our vision and values. Mutual understanding and aligned goals are essential for successful collaborations.</p>
+                    </div>
+                </div>
+                <div class="consensus-item">
+                    <div class="consensus-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="consensus-content">
+                        <h3>Rational Choices Beat Lucky Guesses - No Room for Wishful Thinking</h3>
+                        <p>We make data-driven decisions based on thorough analysis and rational thinking, not on luck or unfounded assumptions.</p>
+                    </div>
+                </div>
+                <div class="consensus-item">
+                    <div class="consensus-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="consensus-content">
+                        <h3>Effective Communication is Key - Vague Thoughts Stop Here</h3>
+                        <p>Clear, transparent, and effective communication is fundamental to our operations. We believe in direct dialogue and precise articulation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title">Our Solutions Delivery & Ongoing Supports</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <!-- <section class="section story-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <p><strong>Empower SME with Blockchain Academy, Green Web3 Solutions & dAPP Development.</strong> iHashing specialises in the development and application of Artificial intelligence, Blockchain dApp, Web3 Solutions, Digital Marketing & Extended Reality XR.</p>
+                    
+                    <p>We are committed to Empower SME with Blockchain Academy, Green Web3 Solutions & dAPP Development. Our services currently include: VTC NITTP registered and TQUK endorsed FutureSkills courses, Web3 solutions, blockchain infrastructural services, dApp development, smart contract Audit, software technology consultation and digital marketing.</p>
+                    
+                    <div class="story-highlight">
+                        <p><strong>Without PRIVACY & SECURITY, there is no freedom!</strong> We take user Privacy very, very seriously. With any product or service developed, privacy is always kept in mind. And Security is what allows people to use a product or service without the fear of their information being compromised. A product or service without security is virtually useless to everyone.</p>
+                    </div>
+                    
+                    <p>We are founded in <strong>2017</strong> and supported by <strong>Cyberport HK</strong>. Our clients across Asia extend to Hong Kong, Singapore, Malaysia, Vietnam, Thailand, Taiwan, and Australia.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <!-- <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Mission</h2>
+                <p>Partner with us to shape the future of Web3 and blockchain technology</p>
+                <a href="contact.html" class="btn-cta">Get In Touch</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>IHASHING</h3>
+                    <p>Empower SME with Blockchain Academy,
+                        Green Web3 Solutions & dAPP Development</p>
+                    <div class="social-links">
+                     
+                        <a href="https://www.linkedin.com/company/ihashing/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/ihashing.hk"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ihashing.hk/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCgOn8PuxHSinqjXF8JsARLA"><i class="fab fa-youtube"></i></a>
+                        <a href="https://github.com/ihashing"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="iacademy.html">iAcademy</a></li>
+                        <li><a href="products-and-solutions.html">Products &amp; Solutions</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="press.html">Press</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                           <li><a href="about.html">About</a></li>
+                                             <li><a href="termsofservice.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="https://ihashing.edu.hk">IHASHING ACADEMY</a></li>
+                        <li><a href="#">SmartPage</a></li>
+                        <li><a href="#">IHOST</a></li>
+                        <li><a href="#">Web3 dAPP Store</a></li>
+                    </ul>
+                </div> -->
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Office 1301, 13/F, One Portside, 29 Tai Yau Street, San Po Kong, Hong Kong</p>
+                    <!-- <p><i class="fas fa-map-marker-alt"></i> Sydney, Australia Office</p> -->
+                    <p><i class="fas fa-envelope"></i> info@ihashing.hk</p>
+                    <!-- <p><i class="fas fa-phone"></i> +852 XXXX XXXX</p> -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2017-2025 ❤️  iHashing Technology Co., Ltd. – All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Gallery Data
+        const galleryData = [
+            {
+                title: "Blockchain Development",
+                desc: "Custom dApp solutions",
+                img: "assets/images/gallery/gallery1.png"
+            },
+            {
+                title: "Web3 Consulting",
+                desc: "Strategic guidance",
+                img: "assets/images/gallery/gallery2.png"
+            },
+            {
+                title: "Smart Contracts",
+                desc: "Audit & deployment",
+                img: "assets/images/gallery/gallery3.png"
+            },
+            {
+                title: "Education Programs",
+                desc: "Blockchain training",
+                img: "assets/images/gallery/gallery4.png"
+            },
+            {
+                title: "Digital Marketing",
+                desc: "Web3 promotion",
+                img: "assets/images/gallery/gallery5.png"
+            },
+            {
+                title: "Infrastructure",
+                desc: "Blockchain solutions",
+                img: "assets/images/gallery/gallery6.png"
+            },
+            {
+                title: "AI Integration",
+                desc: "Intelligent systems",
+                img: "assets/images/gallery/gallery7.png"
+            },
+            {
+                title: "XR Development",
+                desc: "Extended reality",
+                img: "assets/images/gallery/gallery8.png"
+            },
+            {
+                title: "Security Audits",
+                desc: "Comprehensive testing",
+                img: "assets/images/gallery/gallery9.png"
+            },
+            {
+                title: "Tech Consultation",
+                desc: "Expert guidance",
+                img: "assets/images/gallery/gallery10.png"
+            },
+            {
+                title: "DeFi Solutions",
+                desc: "Decentralized finance",
+                img: "assets/images/gallery/gallery11.png"
+            },
+            {
+                title: "NFT Services",
+                desc: "Creation & management",
+                img: "assets/images/gallery/gallery12.png"
+            }
+        ];
+
+        // Render Gallery
+        const galleryGrid = document.getElementById('galleryGrid');
+        if (galleryGrid) {
+            galleryData.forEach(item => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.innerHTML = `
+                    <img src="${item.img}" alt="${item.title}">
+                    <div class="gallery-overlay">
+                       
+                    </div>
+                `;
+                galleryGrid.appendChild(galleryItem);
+            });
+        }
+
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.about-text, .about-image, .value-card, .consensus-item, .gallery-item, .story-text, .footer-column').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Connect wallet button
+        document.querySelectorAll('.connect-wallet-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                window.open('https://signum.network/wallet', '_blank');
+            });
+        });
+
+        // Scroll Progress Bar & Header scroll effect
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+            
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
