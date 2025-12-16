@@ -1,4 +1,4 @@
-# ihashing.hk
+# ihashing.hk [Archived Old Version]
 
 Empower SME with Blockchain Academy, Green Web3 Solutions & dAPP Development.
 
