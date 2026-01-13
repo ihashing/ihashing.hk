@@ -633,14 +633,14 @@
         }
         
         .tech-badge-2 {
-            bottom: 15%;
-            right: -5%;
+            bottom: 70%;
+            right: 90%;
             animation-delay: 1.5s;
         }
         
         .tech-badge-3 {
             top: 30%;
-            left: 5%;
+            left: 3%;
             animation-delay: 2s;
         }
 
@@ -778,6 +778,14 @@
             text-decoration: none;
             color: inherit;
             display: block;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease;
         }
         
         .product-card:hover {
@@ -1440,18 +1448,19 @@
             transform: scale(1.1);
         }
         
-        /* Unified Showcase Section */
-        .showcase-section {
-            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.08) 100%);
+        /* Solutions Section */
+        .solutions-section {
+            background: linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.05) 100%);
+            padding: 100px 0;
         }
 
-        .showcase-header {
+        .solutions-section .section-header {
             text-align: center;
             max-width: 900px;
             margin: 0 auto 60px;
         }
 
-        .eyebrow-label {
+        .solutions-section .eyebrow-label {
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -1460,74 +1469,102 @@
             margin-bottom: 15px;
         }
 
-        .showcase-subtitle {
+        .solutions-section .section-subtitle {
             color: var(--text-light);
             font-size: 18px;
             margin-top: 20px;
             line-height: 1.6;
         }
 
-        .showcase-grid {
+        .solutions-section .products-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            margin-top: 40px;
         }
 
-        .card-panel {
-            background: var(--white);
-            border-radius: 25px;
-            padding: 35px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(18, 13, 60, 0.12);
-            border: 1px solid rgba(114, 27, 123, 0.05);
-            transition: box-shadow 0.2s ease;
+        /* Interviews Section */
+        .interviews-section {
+            background: linear-gradient(135deg, rgba(0, 87, 157, 0.03) 0%, var(--white) 100%);
+            padding: 100px 0;
         }
 
-        .card-panel:hover {
-            box-shadow: 0 20px 45px rgba(18, 13, 60, 0.18);
+        .interviews-section .section-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
         }
 
-        .panel-heading {
-            margin-bottom: 25px;
-        }
-
-        .panel-heading h3 {
-            font-size: 26px;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .panel-heading p {
+        .interviews-section .section-subtitle {
             color: var(--text-light);
-            margin: 0;
-        }
-
-        .products-panel {
-            grid-row: span 2;
-        }
-
-        .media-panel .video-grid {
-            margin-top: 30px;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            font-size: 18px;
             margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        /* Partners Section */
+        .partners-section {
+            background: linear-gradient(135deg, var(--white) 0%, rgba(250, 87, 22, 0.03) 100%);
+            padding: 100px 0;
+        }
+
+        .partners-section .section-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .partners-section .section-subtitle {
+            color: var(--text-light);
+            font-size: 18px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .partners-section .partners-image {
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px auto;
+            display: block;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(18, 13, 60, 0.15);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partners-section .partners-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(18, 13, 60, 0.25);
+        }
+
+        .interviews-section .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .video-card {
-            background: var(--alabaster);
-            border-radius: 18px;
+            background: var(--white);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 28px rgba(0,0,0,0.07);
-            transition: box-shadow 0.2s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .video-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .video-card:hover {
-            box-shadow: 0 16px 32px rgba(114, 27, 123, 0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(114, 27, 123, 0.2);
         }
 
         .video-wrapper {
@@ -1569,17 +1606,16 @@
             margin-bottom: 10px;
         }
 
-        .partners-panel {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        /* Section Header Styles */
+        .section-header {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
 
-        .partners-panel .partners-image {
-            width: 100%;
-            border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-            cursor: pointer;
+        .section-header.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         body.lightbox-open {
@@ -1633,18 +1669,37 @@
         }
 
         @media (max-width: 992px) {
-            .showcase-grid {
+            .solutions-section,
+            .interviews-section,
+            .partners-section {
+                padding: 80px 0;
+            }
+
+            .solutions-section .products-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .products-panel {
-                grid-row: auto;
+
+            .interviews-section .video-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            .video-grid {
+            .solutions-section,
+            .interviews-section,
+            .partners-section {
+                padding: 60px 0;
+            }
+
+            .interviews-section .video-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .solutions-section .section-header,
+            .interviews-section .section-header,
+            .partners-section .section-header {
+                margin-bottom: 40px;
             }
         }
         
@@ -2025,7 +2080,7 @@
             }
             
             .tech-badge-2 {
-                right: -10%;
+                right: 85%;
             }
             
             .tech-badge-3 {
@@ -2113,11 +2168,13 @@
             .tech-badge-1 {
                 top: 5%;
                 right: 20%;
+                 transform: translateY(-50%);
             }
             
             .tech-badge-2 {
-                bottom: 5%;
-                right: 20%;
+                bottom: 55%;
+                right: 70%;
+                 transform: translateY(-50%);
             }
             
             .tech-badge-3 {
@@ -2348,18 +2405,17 @@
         <div class="hero-grid"></div>
         <div class="hero-container">
             <div class="hero-content">
-                <span class="hero-label">🚀 Web3 Solutions & Education</span>
+                <!-- <span class="hero-label">🚀 Web3 Solutions & Education</span> -->
                 <h1>
                    IHASHING TECHNOLOGY GROUP
                     <!-- <br>
                     <span class="gradient-text">Decentralized Web</span> -->
                 </h1>
                 <div class="typing-text">
-                    <span id="typingText"></span>
-                    <span class="cursor"></span>
+                   🚀 Empower SME with FutureSkills Academy<br> Green Web3 Solutions & dAPP Development
                 </div>
                 <div class="hero-buttons">
-                    <a href="#products" class="hero-btn">
+                    <a href="#solutions" class="hero-btn">
                         Learn More<i class="fas fa-arrow-right"></i>
                     </a>
                     <!-- <a href="#services" class="hero-btn hero-btn-secondary">
@@ -2387,11 +2443,11 @@
                     <div class="tech-badge tech-badge-1">
                        Hong Kong
                     </div>
-                    <!-- <div class="tech-badge tech-badge-2">
-                        <i class="fas fa-shield-alt"></i> location 02
-                    </div> -->
+                    <div class="tech-badge tech-badge-2">
+                       Melbourne
+                    </div>
                     <div class="tech-badge tech-badge-3">
-                         Australia
+                        Sydney
                     </div>
                 </div>
             </div>
@@ -2422,71 +2478,67 @@
         </div>
     </section>
 
-    <!-- Unified Showcase Section -->
-    <section id="products" class="section showcase-section">
+    <!-- Solutions Section -->
+    <section id="solutions" class="section solutions-section">
         <div class="container">
-            <div class="showcase-header">
-                <span class="eyebrow-label">‘ WE FAVOUR LONG TERM STRATEGY OVER SHORT TERM GREED ’</span>
-                <h2 class="section-title">Solutions, Interviews & Partners</h2>
-                <p class="showcase-subtitle">Experience our flagship offerings, watch recent spotlights, and see the ecosystem that powers IHASHING's Web3 mission.</p>
+            <div class="section-header">
+                <span class="eyebrow-label">' WE FAVOUR LONG TERM STRATEGY OVER SHORT TERM GREED '</span>
+                <h2 class="section-title">We Specialise In</h2>
+                <p class="section-subtitle">From education to enterprise delivery, explore the services our team crafts for forward-thinking organizations.</p>
             </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
 
-            <div class="showcase-grid">
-                <div class="card-panel products-panel">
-                    <div class="panel-heading">
-                        <h3>We Specialise In</h3>
-                        <p>From education to enterprise delivery, explore the services our team crafts for forward-thinking organizations.</p>
+    <!-- Interviews Section -->
+    <section id="interviews" class="section interviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Interviews</h2>
+                <!-- <p class="section-subtitle">Highlights from regional media channels featuring our founders and clients.</p> -->
+            </div>
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/j8A-GN1wcU0?si=SM5zNeMrcOfp9Ycc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                    <div class="products-grid" id="productsGrid">
-                        <!-- Products will be rendered by JavaScript -->
-                    </div>
-                </div>
-
-                <div class="card-panel media-panel">
-                    <div class="panel-heading">
-                        <h3>Interviews & Achievements</h3>
-                        <p>Highlights from regional media channels featuring our founders and clients.</p>
-                    </div>
-                    <div class="video-grid">
-                        <!-- Video 1 -->
-                        <div class="video-card">
-                            <div class="video-wrapper">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/j8A-GN1wcU0?si=SM5zNeMrcOfp9Ycc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-info">
-                                <h3>【Business Innovator 呈獻《BIZ勝之道》】 #iHashing</h3>
-                                <div class="video-meta">
-                                    <span><i class="fas fa-calendar"></i> August 2023</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 2 -->
-                        <div class="video-card">
-                            <div class="video-wrapper">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/AUGNeyG0Rco?si=FXWu2_uMxwiaK3ON" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                            <div class="video-info">
-                                <h3>HKCT 企業專訪</h3>
-                                <div class="video-meta">
-                                    <span><i class="fas fa-calendar"></i> August 2023</span>
-                                </div>
-                            </div>
+                    <div class="video-info">
+                        <h3>【Business Innovator 呈獻《BIZ勝之道》】 #iHashing</h3>
+                        <div class="video-meta">
+                            <!-- <span><i class="fas fa-calendar"></i> August 2023</span> -->
                         </div>
                     </div>
                 </div>
 
-                <div class="card-panel partners-panel">
-                    <div class="panel-heading">
-                        <h3>Partners & Awards</h3>
-                        <p>Strategic alliances amplifying our acceleration programs, certifications, and market reach.</p>
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/AUGNeyG0Rco?si=FXWu2_uMxwiaK3ON" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                    <img src="assets/images/NAMECARD_BANNER_FBCOVER_01022024.png" alt="Partners and Awards - ECWID, OpenAI, LearnWorlds, Odoo ERP, SIGDAO, TQUK Excellence Awards, Hong Kong Cyberport" class="partners-image" />
+                    <div class="video-info">
+                        <h3>HKCT 企業專訪</h3>
+                        <div class="video-meta">
+                            <!-- <span><i class="fas fa-calendar"></i> August 2023</span> -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Partners Section -->
+    <section id="partners" class="section partners-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Partners & Awards</h2>
+                <!-- <p class="section-subtitle">Strategic alliances amplifying our acceleration programs, certifications, and market reach.</p> -->
+            </div>
+            <img src="assets/images/NAMECARD_BANNER_FBCOVER_01022024.png" alt="Partners and Awards - ECWID, OpenAI, LearnWorlds, Odoo ERP, SIGDAO, TQUK Excellence Awards, Hong Kong Cyberport" class="partners-image" />
+        </div>
+    </section>
     <!-- About Section -->
     <section id="about" class="section about-container">
         <div class="container">
@@ -2979,45 +3031,7 @@
             }
         });
 
-        // Typing Effect
-        const typingTexts = [
-            "Empower SME with FutureSkills Academy,",
-            "Green Web3 Solutions & dAPP Development."
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
-
-        function typeText() {
-            const currentText = typingTexts[textIndex];
-            const typingElement = document.getElementById('typingText');
-            
-            if (!isDeleting) {
-                typingElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-                
-                if (charIndex === currentText.length) {
-                    isDeleting = true;
-                    typingSpeed = 2000; // Pause at end
-                } else {
-                    typingSpeed = 100;
-                }
-            } else {
-                typingElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-                typingSpeed = 50;
-                
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % typingTexts.length;
-                    typingSpeed = 500; // Pause before next text
-                }
-            }
-            
-            setTimeout(typeText, typingSpeed);
-        }
-        typeText();
+        // Typing Effect removed - text is now static
 
         // Mobile menu toggle
         document.getElementById('mobileMenuToggle').addEventListener('click', function() {
@@ -3077,7 +3091,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.fade-in, .service-card, .project-card, .blog-card, .job-item, .stat-item, .about-text, .about-image, .footer-column, .partners-description, .cta-content h2, .cta-content p, .cta-form').forEach(el => {
+        document.querySelectorAll('.fade-in, .service-card, .project-card, .blog-card, .job-item, .stat-item, .about-text, .about-image, .footer-column, .partners-description, .cta-content h2, .cta-content p, .cta-form, .section-header, .product-card, .video-card').forEach(el => {
             observer.observe(el);
         });
 
