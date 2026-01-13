@@ -858,7 +858,7 @@
         .footer-column:nth-child(6) { transition-delay: 0.6s; }
         .footer-column:nth-child(7) { transition-delay: 0.7s; }
         .footer-column:nth-child(8) { transition-delay: 0.8s; }
-        
+         .footer-column:nth-child(9) { transition-delay: 0.9s; }
         .footer-column h3 {
             font-size: 20px;
             margin-bottom: 20px;
