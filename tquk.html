@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "iHashing Technology - Empower SME with Blockchain Academy, Green Web3 Solutions & dAPP Development.",
+          "logo": "https://www.ihashing.hk/assets/images/ihashing-logo-landscape-1-299x89.png",
+          "url": "https://ihashing.hk",
+          "@id": "",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Office 1301, 13/F, One Portside, 29 Tai Yau Street, San Po Kong, Kln",
+            "addressLocality": "Kowloon",
+            "postalCode": "852",
+            "addressCountry": "HK"
+          },
+          "sameAs": [
+            "https://www.facebook.com/ihashing.hk",
+            "https://www.instagram.com/ihashing.hk",
+            "https://www.youtube.com/@ihashing",
+            "https://www.linkedin.com/company/ihashing",
+            "https://github.com/ihashing",
+            "https://ihashing.hk",
+            "https://medium.com/ihashing"
+          ]
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>TQUK - IHASHING ACADEMY</title>
+    <meta name="description" content="TQUK - IHASHING ACADEMY | Learn & Earn TQUK endorsed FutureSkills courses online.">
+    <meta name="keywords" content="Hong Kong blockchain, Web3 solutions, blockchain education, dApp development, TQUK diploma, blockchain Hong Kong, Web3 solutions HK">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/iacademy.css">
+    <!-- Open Graph Tags (for Facebook/Instagram/LinkedIn sharing) -->
+    <meta property="og:title" content="TQUK - IHASHING ACADEMY">
+    <meta property="og:description" content="Learn & Earn TQUK endorsed FutureSkills courses online. Apply now.">
+    <meta property="og:image" content="https://ihashing.hk/assets/images/previewImg.png">
+    <meta property="og:url" content="https://ihashing.hk/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="iHashing Technology Group">
+    <!-- Twitter Card Tags (for X sharing) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TQUK - IHASHING ACADEMY">
+    <meta name="twitter:description" content="Learn & Earn TQUK endorsed FutureSkills courses online. Apply now.">
+    <meta name="twitter:image" content="https://ihashing.hk/assets/images/previewImg.png">
+    <!-- Favicon and Canonical -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://ihashing.hk/">
+    <!-- Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EMF5G9SG7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5EMF5G9SG7');
+    </script>
+    <!-- /Analytics -->
+    <style>
+        :root {
+            --primary: #721b7b;
+            --secondary: #00579d;
+            --accent-orange: #fa5716;
+            --accent-red: #DC3545;
+            --white: #FFFFFF;
+            --alabaster: #f8f8f8;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex; justify-content: center; align-items: center;
+            z-index: 10000; transition: opacity 0.5s, visibility 0.5s;
+        }
+        .loading-screen.hidden { opacity: 0; visibility: hidden; }
+        .loader {
+            width: 60px; height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--white);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        /* Animated Background */
+        .animated-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #f8f8f8 25%, transparent 25%),
+                        linear-gradient(-45deg, #f8f8f8 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, #f8f8f8 75%),
+                        linear-gradient(-45deg, transparent 75%, #f8f8f8 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            animation: bgMove 20s linear infinite; opacity: 0.03;
+        }
+        @keyframes bgMove {
+            0% { background-position: 0 0, 0 10px, 10px -10px, -10px 0px; }
+            100% { background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px; }
+        }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0; position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1); transition: all 0.3s;
+        }
+        header.scrolled { padding: 15px 0; background-color: rgba(255, 255, 255, 0.98); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo {
+            display: flex; align-items: center; font-size: 28px; font-weight: 700;
+            color: var(--primary); text-decoration: none; position: relative; overflow: hidden;
+        }
+        .logo::before {
+            content: ''; position: absolute; bottom: 0; left: -100%;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+            animation: logoGlow 3s infinite;
+        }
+        @keyframes logoGlow { 0% { left: -100%; } 100% { left: 100%; } }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; position: relative; }
+        nav ul li a {
+            text-decoration: none; color: var(--text-dark); font-weight: 500;
+            transition: all 0.3s; position: relative; display: inline-block;
+        }
+        nav ul li a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0;
+            width: 0; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            transition: width 0.3s;
+        }
+        nav ul li a:hover { color: var(--primary); transform: translateY(-2px); }
+        nav ul li a:hover::after { width: 100%; }
+        .connect-wallet-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white); border: none; padding: 10px 20px;
+            border-radius: 25px; cursor: pointer; font-weight: 500;
+            transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .connect-wallet-btn::before {
+            content: ''; position: absolute; top: 50%; left: 50%;
+            width: 0; height: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s;
+        }
+        .connect-wallet-btn:hover::before { width: 300px; height: 300px; }
+        .connect-wallet-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(114, 27, 123, 0.3); }
+        /* Section Styles */
+        .section { padding: 80px 0; position: relative; }
+        .section-title {
+            font-size: 36px; font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; text-align: center; margin-bottom: 50px;
+            position: relative; animation: fadeInUp 0.6s ease;
+        }
+        .section-title::after {
+            content: ''; position: absolute; bottom: -15px; left: 50%;
+            transform: translateX(-50%); width: 80px; height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange));
+            animation: expandWidth 1s ease;
+        }
+        @keyframes expandWidth { from { width: 0; } to { width: 80px; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        /* Shared components */
+        .feature-card {
+            background: var(--white); padding: 40px 30px; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s;
+            position: relative; overflow: hidden; opacity: 0; transform: translateY(30px);
+        }
+        .feature-card.visible { opacity: 1; transform: translateY(0); }
+        .feature-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange), var(--secondary));
+            transform: scaleX(0); transform-origin: left; transition: transform 0.6s;
+        }
+        .feature-card:hover::before { transform: scaleX(1); }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 87, 157, 0.2); }
+        .feature-icon {
+            font-size: 48px; background: linear-gradient(135deg, var(--secondary), var(--primary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 20px; animation: iconFloat 3s ease-in-out infinite;
+        }
+        @keyframes iconFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .feature-card h3 { font-size: 24px; font-weight: 600; color: var(--primary); margin-bottom: 15px; }
+        .feature-card p { color: var(--text-light); line-height: 1.8; margin-bottom: 20px; }
+        /* Hero specific */
+        .hero {
+            position: relative; overflow: hidden; padding: 120px 0 100px;
+            background: radial-gradient(circle at top left, rgba(114, 27, 123, 0.12), transparent 55%),
+                        radial-gradient(circle at bottom right, rgba(0, 87, 157, 0.12), transparent 50%),
+                        linear-gradient(135deg, var(--alabaster) 0%, rgba(114, 27, 123, 0.04) 100%);
+        }
+        .license-badge {
+            display: inline-flex; align-items: center; gap: 12px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            color: var(--white); padding: 10px 22px; border-radius: 999px;
+            font-size: 16px; font-weight: 600; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .hero-btn {
+            display: inline-flex; align-items: center; gap: 12px;
+            padding: 14px 30px; border-radius: 999px; font-weight: 600; font-size: 17px;
+            text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        .hero-btn-primary { background: linear-gradient(135deg, var(--accent-orange), var(--accent-red)); color: var(--white); box-shadow: 0 12px 30px rgba(250, 87, 22, 0.3); }
+        .hero-btn-outline { color: var(--secondary); border: 2px solid rgba(0, 87, 157, 0.6); background: rgba(255, 255, 255, 0.8); }
+        .hero-btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(114, 27, 123, 0.25); color: var(--primary);}
+        /* Courses grid */
+        .future-skills-courses-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 50px;
+            max-width: 900px; margin-left: auto; margin-right: auto;
+        }
+        .future-skills-course-card {
+            background: var(--white); border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s;
+            position: relative; opacity: 0; transform: translateY(30px); border: 2px solid var(--alabaster);
+        }
+        .future-skills-course-card.visible { opacity: 1; transform: translateY(0); }
+        .future-skills-course-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(114, 27, 123, 0.2); border-color: var(--primary); }
+        .future-skills-course-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 25px 30px; color: var(--white); text-align: center;
+        }
+        .future-skills-course-number { font-size: 14px; font-weight: 600; opacity: 0.9; margin-bottom: 10px; letter-spacing: 1px; }
+        .future-skills-course-title { font-size: 20px; font-weight: 700; line-height: 1.3; margin: 0; }
+        .future-skills-course-content { padding: 30px; }
+        .future-skills-course-actions { display: flex; flex-direction: column; gap: 12px; }
+        .future-skills-course-btn {
+            width: 100%; padding: 14px 20px; border-radius: 25px; font-weight: 600; font-size: 16px;
+            cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden;
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; border: none;
+        }
+        .futureSkills-btn-payment { background: linear-gradient(135deg, var(--accent-orange), var(--accent-red)); color: var(--white); }
+        .futureSkills-btn-payment:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(250, 87, 22, 0.3); color: var(--white); }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--white);
+            padding: 60px 0 30px; position: relative; overflow: hidden;
+        }
+        footer::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px; animation: bgMove 20s linear infinite;
+        }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; position: relative; z-index: 1; }
+        .footer-column { opacity: 0; transform: translateY(30px); }
+        .footer-column.visible { opacity: 1; transform: translateY(0); transition: all 0.6s; }
+        .footer-column h3 { font-size: 20px; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-column p { margin-bottom: 10px; }
+        .footer-column h3::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 2px;
+            background: var(--accent-orange); animation: expandWidth 1s ease;
+        }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; opacity: 0; transform: translateX(-20px); }
+        .footer-column.visible ul li { opacity: 1; transform: translateX(0); transition: all 0.3s; }
+        .footer-column ul li a { color: var(--white); text-decoration: none; transition: all 0.3s; display: inline-block; }
+        .footer-column ul li a:hover { color: var(--accent-orange); transform: translateX(5px); }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a {
+            display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+            background-color: rgba(255, 255, 255, 0.1); border-radius: 50%; color: var(--white); transition: all 0.3s;
+        }
+        .social-links a:hover { background-color: var(--accent-orange); transform: translateY(-5px) rotate(360deg); }
+        .footer-bottom {
+            text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px; position: relative; z-index: 1;
+        }
+        .mobile-menu-toggle { display: none; background: none; border: none; font-size: 24px; color: var(--primary); cursor: pointer; }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle { display: block; }
+            nav {
+                position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px);
+                background-color: var(--white); transition: left 0.3s; z-index: 99; overflow-y: auto;
+            }
+            nav.active { left: 0; }
+            nav ul { flex-direction: column; padding: 20px; }
+            nav ul li { margin: 15px 0; opacity: 0; transform: translateX(-20px); }
+            nav.active ul li { opacity: 1; transform: translateX(0); transition: all 0.3s; }
+            .hero-container { flex-direction: column !important; text-align: center; }
+            .hero-copy { max-width: 100% !important; align-items: center !important; }
+            .hero-actions { justify-content: center; }
+            .hero-image { max-width: 100% !important; margin-top: 40px; }
+            .future-skills-courses-grid { grid-template-columns: 1fr !important; }
+            .features-grid { grid-template-columns: 1fr !important; }
+            .split-section { flex-direction: column !important; }
+        }
+        .scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent-orange), var(--secondary));
+            z-index: 10000; transition: width 0.1s;
+        }
+        .split-section { display: flex; gap: 60px; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="IHASHING Logo" style="height: 30px; width: auto; margin-right: 10px; vertical-align: middle;"> <p>IHASHING</p>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="iacademy.html">iAcademy</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="press.html">Press</a></li>
+                    <li><a href="https://medium.com/ihashing" target="_blank">Blog</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><button class="connect-wallet-btn">Connect Wallet</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 80vh; display: flex; align-items: center;">
+        <div class="container hero-container" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 40px;">
+            <div class="hero-copy" style="flex: 1; max-width: 600px; display: flex; flex-direction: column; align-items: flex-start; text-align: left;">
+                <h1 style="font-size: 52px; font-weight: 700; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px;">TQUK</h1>
+                <div class="license-badge" style="margin-bottom: 20px;">
+                    <i class="fas fa-certificate"></i>
+                    <span>// Top ASEAN Web3 &amp; Blockchain FutureSkills Academy //</span>
+                </div>
+                <p style="font-size: 20px; color: var(--text-light); margin-bottom: 15px;">Learn &amp; Earn TQUK endorsed futureSkills courses online.</p>
+                
+                <div class="hero-actions" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://bit.ly/4j2m6PJ" class="hero-btn hero-btn-primary" target="_blank" rel="noopener noreferrer">
+                        Enrol Now
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" style="flex: 1; max-width: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); ">
+                <img src="assets/images/tquk-endorsement-14-828x926.jpeg" alt="TQUK Endorsement" style="width: 100%; height: auto; display: block;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Diploma Section -->
+    <section class="section diploma-section" style="background: linear-gradient(135deg, rgba(114, 27, 123, 0.05), var(--alabaster)); text-align: center;">
+        <div class="container">
+            <h2 class="section-title">TQUK Diploma in Blockchain Technology (LEVEL 5)</h2>
+            <p style="font-size: 20px; color: var(--text-light); max-width: 800px; margin: 0 auto 20px;">Equip you with the Web3 &amp; Blockchain Mindset, Toolset and Skillset - your complete packages for success in the digital age.</p>
+            <p style="font-size: 18px; font-weight: bold; color: var(--accent-orange); margin-bottom: 40px; display: inline-block; padding: 10px 20px; border-radius: 20px; background: rgba(250,87,22,0.1);">// Early Bird Promo Code: EARLYBIRD //</p>
+            
+            <div class="hero-actions" style="justify-content: center; margin-bottom: 50px;">
+                <a href="assets/documents/TQUK-Diploma-in-Blockchain-Technology-Lv5-CourseOutlineBrochure.pdf" target="_blank" class="hero-btn hero-btn-outline"><i class="fas fa-file-pdf"></i> Course Outline</a>
+                <a href="https://bit.ly/4j2m6PJ" target="_blank" class="hero-btn hero-btn-primary"><i class="fas fa-user-plus"></i> Enrol Now</a>
+                <a href="https://buy.stripe.com/bIY4jG1rv9Q3gg0004" target="_blank" class="hero-btn hero-btn-outline"><i class="fas fa-credit-card"></i> Card Payment</a>
+                <a href="https://buy.stripe.com/bIYbM86LP7HV2pa149" target="_blank" class="hero-btn hero-btn-outline" style="border-color: var(--primary); color: var(--primary);"><i class="fas fa-certificate"></i> TQUK Certificate</a>
+            </div>
+
+            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;" class="feature-card visible">
+                <img src="assets/images/SampleCert_IHAS_TQUK_DBT_LV5_Front.png" alt="Sample Cert Front" style="max-width: 400px; width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="assets/images/SampleCert_IHAS_TQUK_DBT_LV5_Back.png" alt="Sample Cert Back" style="max-width: 400px; width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us & Features Section -->
+    <section class="section" id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Us</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 18px; color: var(--text-light); line-height: 1.8;">
+                iHashing Academy MicroMaster Program with the vision of bridging the tech talent gap in Hong Kong &amp; ASEAN, we enable students and SMEs to acquire the skills they need to thrive in the decentralised economy of the future.<br><br>
+                <strong style="color: var(--primary);">// Our motto: “Enlighten people with blockchain values” //</strong>
+            </p>
+            
+            <div class="features-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px;">
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Trusted</h3>
+                    <p>Understand the core concepts of blockchain technology and its ecosystem with our worldwide experts.</p>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon"><i class="fas fa-chess-knight"></i></div>
+                    <h3>Strategic</h3>
+                    <p>Learn how to approach blockchain implementation and Upgrade your team’s productivity and decision making.</p>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Practical</h3>
+                    <p>Focus on your transformation with up-to-date actionable tools to create new revenue opportunities that capitalise on insights.</p>
+                </div>
+            </div>
+
+            <div class="features-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div class="feature-card" style="padding: 30px 20px; text-align: center; background: linear-gradient(135deg, var(--white), var(--alabaster));">
+                    <div class="feature-icon" style="font-size: 36px; margin-bottom: 15px;"><i class="fas fa-vr-cardboard"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 10px;">Immersive learning</h3>
+                    <p style="font-size: 14px; margin-bottom: 0;">Hands-on experience in ESG-compatible Green Blockchain project development (Signum Network), apply as you learn.</p>
+                </div>
+                <div class="feature-card" style="padding: 30px 20px; text-align: center; background: linear-gradient(135deg, var(--white), var(--alabaster));">
+                    <div class="feature-icon" style="font-size: 36px; margin-bottom: 15px;"><i class="fas fa-globe"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 10px;">Global Recognition</h3>
+                    <p style="font-size: 14px; margin-bottom: 0;">The qualification level can be used as a reference by employers and institutions and it can be advanced to renowned universities in the UK, Australia, and Canada.</p>
+                </div>
+                <div class="feature-card" style="padding: 30px 20px; text-align: center; background: linear-gradient(135deg, var(--white), var(--alabaster));">
+                    <div class="feature-icon" style="font-size: 36px; margin-bottom: 15px;"><i class="fas fa-users"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 10px;">Industry mentors</h3>
+                    <p style="font-size: 14px; margin-bottom: 0;">First-hand experience sharing, aligned with market needs.</p>
+                </div>
+                <div class="feature-card" style="padding: 30px 20px; text-align: center; background: linear-gradient(135deg, var(--white), var(--alabaster));">
+                    <div class="feature-icon" style="font-size: 36px; margin-bottom: 15px;"><i class="fas fa-clock"></i></div>
+                    <h3 style="font-size: 18px; margin-bottom: 10px;">Flexible learning</h3>
+                    <p style="font-size: 14px; margin-bottom: 0;">Attend classes after work/ class. Around 100 hours of intensive training.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included & How to Enrol -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(0, 87, 157, 0.05), rgba(114, 27, 123, 0.05));">
+        <div class="container">
+            <div class="split-section">
+                <!-- What's Included -->
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title" style="text-align: left;">What's Included</h2>
+                    
+                    <div class="feature-card" style="margin-bottom: 20px; padding: 25px;">
+                        <h3 style="font-size: 20px; margin-bottom: 15px;"><i class="fas fa-key" style="color: var(--accent-orange); margin-right: 10px;"></i> Key Takeaway</h3>
+                        <ul style="color: var(--text-light); padding-left: 20px; line-height: 1.8;">
+                            <li>The concepts &amp; truth of blockchain and distributed ledger technologies</li>
+                            <li>The opportunities and challenges of blockchain technology, and impact analysis</li>
+                            <li>Ability to setup own blockchain nodes, validators &amp; wallets</li>
+                            <li>Ability to propose a blockchain-based solution to address a business problem within your own context</li>
+                            <li>Understanding the financial model, risk, governance, strategic approach and business design of blockchain projects</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card" style="margin-bottom: 20px; padding: 25px;">
+                        <h3 style="font-size: 20px; margin-bottom: 10px;"><i class="fas fa-gift" style="color: var(--primary); margin-right: 10px;"></i> Bonus Material</h3>
+                        <p style="color: var(--text-light); margin-bottom: 0;">Exclusive, in-depth interviews with the world’s top blockchain experts.</p>
+                    </div>
+                    
+                    <div class="feature-card" style="margin-bottom: 20px; padding: 25px;">
+                        <h3 style="font-size: 20px; margin-bottom: 10px;"><i class="fas fa-certificate" style="color: var(--secondary); margin-right: 10px;"></i> On-Chain NFT Certificate</h3>
+                        <p style="color: var(--text-light); margin-bottom: 0;">Official completion certificate: Blockchain verified NFT certificate &amp; TQUK accreditation.</p>
+                    </div>
+                    
+                    <div class="feature-card" style="padding: 25px;">
+                        <h3 style="font-size: 20px; margin-bottom: 10px;"><i class="fas fa-comments" style="color: var(--accent-orange); margin-right: 10px;"></i> Community</h3>
+                        <p style="color: var(--text-light); margin-bottom: 0;">Email Guidance, Community Support &amp; Updates.</p>
+                    </div>
+                </div>
+
+                <!-- How to Enrol -->
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title" style="text-align: left;">How to Enrol</h2>
+                    
+                    <div style="position: relative; padding-left: 40px; margin-top: 30px;">
+                        <div style="position: absolute; left: 15px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(to bottom, var(--primary), var(--accent-orange));"></div>
+                        
+                        <div class="feature-card" style="position: relative; margin-bottom: 30px; padding: 25px;">
+                            <div style="position: absolute; left: -41px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; background: var(--primary); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; box-shadow: 0 0 0 5px var(--white); z-index: 10;">1</div>
+                            <h3 style="font-size: 20px; color: var(--primary); margin-bottom: 10px;">Submit Form</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0;">Fill out the <a href="https://bit.ly/4j2m6PJ" target="_blank" style="color: var(--accent-orange); text-decoration: none; font-weight: bold;">Enrolment Form</a>.</p>
+                        </div>
+                        
+                        <div class="feature-card" style="position: relative; margin-bottom: 30px; padding: 25px;">
+                            <div style="position: absolute; left: -41px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; background: var(--secondary); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; box-shadow: 0 0 0 5px var(--white); z-index: 10;">2</div>
+                            <h3 style="font-size: 20px; color: var(--secondary); margin-bottom: 10px;">Payment</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0;">Receive iHashing debit Note and send us payment - cheque by courier/ Bank Transfer/ FPS, iHashing send out INVOICE.</p>
+                        </div>
+                        
+                        <div class="feature-card" style="position: relative; margin-bottom: 30px; padding: 25px;">
+                            <div style="position: absolute; left: -41px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; background: var(--accent-orange); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; box-shadow: 0 0 0 5px var(--white); z-index: 10;">3</div>
+                            <h3 style="font-size: 20px; color: var(--accent-orange); margin-bottom: 10px;">Attend Class</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0;">Attend the course and Sign Attendance Record.</p>
+                        </div>
+                        
+                        <div class="feature-card" style="position: relative; margin-bottom: 30px; padding: 25px;">
+                            <div style="position: absolute; left: -41px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; background: var(--primary); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; box-shadow: 0 0 0 5px var(--white); z-index: 10;">4</div>
+                            <h3 style="font-size: 20px; color: var(--primary); margin-bottom: 10px;">Examination</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0;">Attend and pass the examination.</p>
+                        </div>
+                        
+                        <div class="feature-card" style="position: relative; padding: 25px;">
+                            <div style="position: absolute; left: -41px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; background: var(--secondary); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; box-shadow: 0 0 0 5px var(--white); z-index: 10;">5</div>
+                            <h3 style="font-size: 20px; color: var(--secondary); margin-bottom: 10px;">Certification</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0;">Certificate Application (Around One Month).</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 50px; text-align: center;">
+                        <a href="https://bit.ly/4j2m6PJ" target="_blank" class="hero-btn hero-btn-primary" style="width: 100%; justify-content: center; display: inline-flex;">
+                            <i class="fas fa-user-plus"></i> Enroll Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>IHASHING</h3>
+                    <p>// Empower SME with FutureSkills Academy, Green Web3 Solutions &amp; dAPP Development. //</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/ihashing/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/ihashing.hk"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ihashing.hk/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCgOn8PuxHSinqjXF8JsARLA"><i class="fab fa-youtube"></i></a>
+                        <a href="https://github.com/ihashing"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="iacademy.html">iAcademy</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="press.html">Press</a></li>
+                        <li><a href="https://medium.com/ihashing" target="_blank">Blog</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="termsofservice.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Office 1301, 13/F, One Portside, 29 Tai Yau Street, San Po Kong, Hong Kong</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Melbourne, Australia</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Sydney, Australia</p>
+                    <p><i class="fas fa-envelope"></i> info@ihashing.hk</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2017-2026 ❤️  iHashing Technology Co., Ltd. – All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 500);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .future-skills-course-card, .footer-column, .split-section > div').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Connect wallet button
+        document.querySelectorAll('.connect-wallet-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                window.open('https://signum.network/wallet', '_blank');
+            });
+        });
+
+        // Scroll Progress Bar & Header scroll effect
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+            
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

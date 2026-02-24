@@ -1023,6 +1023,30 @@
             bottom: 30px;
         }
         
+        .coming-soon-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(3px);
+            z-index: 10;
+            border-radius: 20px;
+        }
+        
+        .program-card:hover .coming-soon-overlay {
+            opacity: 1;
+        }
+        
        
         .future-skills-courses-section {
             background: var(--white);
@@ -1688,18 +1712,22 @@
                     
                 </div>
                  -->
-                <div class="program-card">
-                    <div class="program-header">
-                        <h3>TQUK</h3>
+                <a href="tquk.html" style="text-decoration: none; color: inherit;">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3>TQUK</h3>
+                        </div>
+                      
                     </div>
-                  
-                </div>
+                </a>
                 
-                <div class="program-card">
+                <div class="program-card" style="cursor: not-allowed;">
                     <div class="program-header">
                         <h3>POSTGRAD</h3>
                     </div>
-                   
+                    <div class="coming-soon-overlay">
+                        Coming Soon
+                    </div>
                 </div>
             </div>
         </div>
