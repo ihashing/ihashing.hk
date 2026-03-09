@@ -459,6 +459,7 @@
         .footer-column.visible ul li:nth-child(7) { transition-delay: 0.7s; }
         .footer-column.visible ul li:nth-child(8) { transition-delay: 0.8s; }
         .footer-column.visible ul li:nth-child(9) { transition-delay: 0.9s; }
+        .footer-column.visible ul li:nth-child(10) { transition-delay: 1.0s; }
 
         .footer-column ul li a {
             color: var(--white);
